@@ -15,6 +15,7 @@ module.exports = {
   },
   rules: {
     'no-debugger': 0,
+    camelcase: 0,
     'no-use-before-define': 'off',
     'no-alert': 0,
     'no-await-in-loop': 0,
