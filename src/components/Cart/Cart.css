@@ -1,0 +1,131 @@
+/* Note: Carttt */
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cart-overlay.show {
+  pointer-events: all;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  background: var(--clr-grey-10);
+  padding: 3rem 1rem 0 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  transition: var(--transition);
+  transition-delay: 0.15s;
+  transform: translateX(100%);
+  overflow: scroll;
+}
+
+.show .cart {
+  transform: translateX(0);
+}
+
+.cart-close {
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-grey-5);
+  position: absolute;
+  font-weight: 600;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.cart header {
+  text-align: center;
+}
+
+.cart header h3 {
+  font-weight: 500;
+}
+
+.cart-total {
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+
+.cart-checkout {
+  display: block;
+  letter-spacing: 0.2rem;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+/* cart item */
+
+.cart-item {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 1.5rem;
+  align-items: center;
+}
+
+.cart-item-img {
+  width: 7.5rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: var(--radius);
+  outline: 1px solid var(--clr-grey-1);
+}
+
+.cart-item-name {
+  margin-bottom: 0.15rem;
+}
+
+.cart-item-price {
+  margin-bottom: 0;
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
+  color: var(--clr-grey-3);
+}
+
+.cart-item-remove-btn {
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-grey-5);
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+}
+
+.cart-item-amount {
+  margin-bottom: 0;
+  text-align: center;
+  color: var(--clr-grey-3);
+  line-height: 1;
+}
+
+.cart-item-increase-btn,
+.cart-item-decrease-btn {
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.25rem;
+}

@@ -1,0 +1,51 @@
+/* note:sideBar */
+.sidebar-modal,
+.sidebar {
+  position: fixed;
+  transition: opacity 0.2s linear;
+  left: 0;
+  top: 8rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+}
+.sidebar-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+.sidebar {
+  width: 32rem;
+  opacity: 1;
+  visibility: visible;
+  padding: 2rem 1rem 1rem;
+  background-color: #1f2028;
+  color: white;
+  transition: var(--transition-medium);
+  transform: translate(-100%);
+}
+.sidebar.open {
+  transform: translate(0);
+}
+.sidebar-links {
+  list-style-type: none;
+}
+.sidebar-links li {
+  font-size: 1.8rem;
+  padding: 1rem;
+  border-bottom: 1px solid white;
+  transition: var(--transition-fast);
+}
+.sidebar-links li:hover {
+  background-color: var(--clr-grey-14);
+  border-radius: 2px;
+  color: var(--clr-grey-1);
+  border: 0;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: currentColor;
+}
