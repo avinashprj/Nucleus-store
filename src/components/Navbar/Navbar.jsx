@@ -40,9 +40,13 @@ export const Navbar = () => {
       </div>
       <ul className="nav-links flex-al-center">
         {pageLinks.map((singleLink) => (
-          <li key={singleLink.id}>
-            <Link to={singleLink.page} className="link nav-link m-right-small">
-              {singleLink.page}
+          <li key={singleLink?.id}>
+            <Link
+              style={{ textTransform: 'capitalize' }}
+              to={singleLink?.route?.toLowerCase()}
+              className="link nav-link m-right-small"
+            >
+              {singleLink?.page}
             </Link>
           </li>
         ))}
@@ -91,9 +95,9 @@ export const Navbar = () => {
             </form>
           </div>
         </div>
-        <a className="flex-al-center" href="./wishlist.html">
+        <Link className="flex-al-center" to="/wishlist">
           <AiOutlineHeart className="nav-icons m-right-small" />
-        </a>
+        </Link>
         <button
           type="submit"
           onClick={() => setToggleCartModal(!toggleCartModal)}
