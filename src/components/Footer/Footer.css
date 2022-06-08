@@ -24,11 +24,15 @@
 .footer .list-item:hover a {
   color: var(--clr-black);
 }
+
 .footer .list-item {
   padding: 1rem;
-
   text-align: left;
   cursor: pointer;
+}
+.footer .list-item:hover {
+  background-color: var(--clr-grey-12);
+  border-radius: 1rem;
 }
 
 @media only screen and (max-width: 58.75em) {
