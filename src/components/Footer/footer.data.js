@@ -54,7 +54,7 @@ export const footerData = [
     key: 'Help',
   },
   {
-    id: 19,
+    id: 10,
     url: '#',
     title: 'Warranty & Support',
     key: 'Help',
@@ -126,13 +126,13 @@ export const footerData = [
     key: 'company',
   },
   {
-    id: 21,
+    id: 22,
     url: '#',
     title: 'Privacy Policy',
     key: 'company',
   },
   {
-    id: 22,
+    id: 23,
     url: '#',
     title: 'Investor Relations',
     key: 'company',
