@@ -1,4 +1,4 @@
-import { Response } from "miragejs";
+import { Response } from 'miragejs';
 
 /**
  * All the routes related to Product are present here.
@@ -20,7 +20,7 @@ export const getAllProductsHandler = function () {
  * */
 
 export const getProductHandler = function (schema, request) {
-  const productId = request.params.productId;
+  const { productId } = request.params;
   try {
     const product = schema.products.findBy({ _id: productId });
     return new Response(200, {}, { product });

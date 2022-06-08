@@ -15,7 +15,11 @@ module.exports = {
   },
   rules: {
     'no-debugger': 0,
+    'react/prop-types': 0,
+    'jsx-a11y/anchor-is-valid': false,
+    camelcase: 0,
     'no-use-before-define': 'off',
+    'button-has-type': 0,
     'no-alert': 0,
     'no-await-in-loop': 0,
     'no-return-assign': ['error', 'except-parens'],

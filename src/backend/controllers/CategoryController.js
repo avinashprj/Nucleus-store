@@ -1,4 +1,4 @@
-import { Response } from "miragejs";
+import { Response } from 'miragejs';
 
 /**
  * All the routes related to Category are present here.
@@ -30,7 +30,7 @@ export const getAllCategoriesHandler = function () {
  * */
 
 export const getCategoryHandler = function (schema, request) {
-  const categoryId = request.params.categoryId;
+  const { categoryId } = request.params;
   try {
     const category = schema.categories.findBy({ _id: categoryId });
     return new Response(200, {}, { category });

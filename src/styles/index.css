@@ -1,0 +1,8 @@
+@import url("https://nucleus-ui.vercel.app/css/utils.css");
+@import url("https://nucleus-ui.vercel.app/css/components.css");
+@import url("../components/index.components.css");
+@import url("../pages/index.pages.css");
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
