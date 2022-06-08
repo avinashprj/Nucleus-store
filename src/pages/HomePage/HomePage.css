@@ -66,15 +66,19 @@
 .card-hero {
   position: relative;
   text-align: center;
-  min-width: 108px;
+  min-width: 10.8rem;
 }
 .card-image {
   width: 15rem;
   background-color: var(--clr-grey-15);
   height: auto;
-  border-radius: 12px;
+  border-radius: 1.2rem;
   margin: 0 auto;
   overflow: hidden;
+  transition: var(--transition);
+}
+.card-image:hover {
+  background-color: var(--clr-grey-14);
 }
 @media only screen and (max-width: 37.5em) {
   .card-image {
