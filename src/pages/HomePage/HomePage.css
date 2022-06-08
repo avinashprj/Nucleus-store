@@ -63,6 +63,7 @@
 .hero-cards::-webkit-scrollbar {
   display: none;
 }
+
 .card-hero {
   position: relative;
   text-align: center;
