@@ -24,3 +24,15 @@
 .filter-container::-webkit-scrollbar-track {
   background: var(--clr-grey-9);
 }
+
+/* note:phone filter */
+.phone-filter {
+  display: none;
+  /* display: grid; */
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.phone-filter .phone-filter-btn {
+  font-size: 1.7rem;
+  padding: 2rem 3rem;
+}
