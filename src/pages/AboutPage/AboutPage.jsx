@@ -7,9 +7,18 @@ export const AboutPage = () => {
 
   return (
     <>
+<<<<<<< Updated upstream
       <header>
         <Navbar />
       </header>
+=======
+<<<<<<< Updated upstream
+      <header>
+        <Navbar />
+      </header>
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
       <section className="page-hero">
         <div className="section-center">
           <h3 className="page-hero-title">
@@ -33,7 +42,14 @@ export const AboutPage = () => {
           accusamus nesciunt totam vitae esse iste.
         </p>
       </section>
+<<<<<<< Updated upstream
       <Footer />
+=======
+<<<<<<< Updated upstream
+      <Footer />
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </>
   );
 };
