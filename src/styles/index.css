@@ -1,8 +1,8 @@
+@import "react-slideshow-image/dist/styles.css";
 @import url("https://nucleus-ui.vercel.app/css/utils.css");
-@import url("https://nucleus-ui.vercel.app/css/components.css");
+@import url("https://nucleus-ui.vercel.app/components/button/button.css");
 @import url("../components/index.components.css");
-@import url("../pages/index.pages.css");
-@import url("../pages/Wishlist/Wishlist.css");
+@import url("../pages/index.pages.module.css");
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

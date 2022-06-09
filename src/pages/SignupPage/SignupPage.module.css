@@ -1,0 +1,25 @@
+.form-signup {
+  /* display: none; */
+  transition: var(--transition);
+}
+.form-signup.open {
+  display: block;
+}
+
+.form-signup .form-divider {
+  position: relative;
+  border-bottom: 1px solid var(--clr-grey-14);
+  text-align: center;
+}
+
+.form-signup-group {
+  margin-bottom: 1rem;
+}
+.form-signup .form-divider .or {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 0 1rem;
+}
