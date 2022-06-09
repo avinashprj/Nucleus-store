@@ -1,13 +1,4 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
-function useScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-}
+import React from 'react';
 
 function ErrorFallback({ error }) {
   return (
@@ -23,4 +14,4 @@ function ErrorFallback({ error }) {
   );
 }
 
-export { useScrollToTop, ErrorFallback };
+export { ErrorFallback };
