@@ -18,9 +18,9 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
         >
           <FiX />
         </button>
-        <header>
-          <h3 className="text-slanted">your bag</h3>
-        </header>
+
+        <h3 className="text-slanted">your bag</h3>
+
         {/* cart items */}
         <div className="cart-items">
           <article className="cart-item" data-id="rec43w3ipXvP28vog">

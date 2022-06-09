@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useCloseOnClickOutside } from '../../CustomHooks/CustomHooks';
 import { pageLinks } from '../Navbar/navbar.data';
 
@@ -14,11 +14,20 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
       >
         <ul className="sidebar-links">
           {pageLinks.map((singleLink) => (
-            <li key={singleLink.id}>
-              <Link to={`/${singleLink.page}`} className="link">
-                {singleLink.page}
-              </Link>
-            </li>
+            <NavLink
+              key={singleLink?.id}
+              to={`${singleLink?.route}`}
+              className="link"
+            >
+              <li>
+                <div
+                  style={{ display: 'inline-block' }}
+                  className="link border-none"
+                >
+                  {singleLink?.page}
+                </div>
+              </li>
+            </NavLink>
           ))}
         </ul>
       </div>
