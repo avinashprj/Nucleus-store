@@ -70,7 +70,11 @@
 }
 .phone-filter-container {
   overflow-y: scroll;
+<<<<<<< Updated upstream
   height: 25rem;
+=======
+  height: 18rem;
+>>>>>>> Stashed changes
 }
 .phone-filter-container::-webkit-scrollbar {
   scroll-behavior: smooth;
