@@ -1,8 +1,6 @@
 .red {
   fill: var(--clr-primary-5);
 }
-<<<<<<< Updated upstream
-=======
 .card {
   position: relative;
   width: 100%;
@@ -231,4 +229,3 @@
 .card-grid .card-grid-img img {
   object-fit: cover;
 }
->>>>>>> Stashed changes
