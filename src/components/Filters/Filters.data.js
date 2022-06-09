@@ -9,6 +9,6 @@ const filtersData = {
   ],
 };
 
-const sortsData = ['low to high', 'high to low', 'latest'];
+const sortsData = ['high to low', 'low to high', 'latest'];
 
 export { sortsData, filtersData };
