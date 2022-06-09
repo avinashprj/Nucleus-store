@@ -14,7 +14,8 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
       >
         <ul className="sidebar-links">
           {pageLinks.map((singleLink) => (
-            <NavLink
+            <Link
+              onClick={() => setShowSidebar(!showSidebar)}
               key={singleLink?.id}
               to={`${singleLink?.route}`}
               className="link"
@@ -27,7 +28,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                   {singleLink?.page}
                 </div>
               </li>
-            </NavLink>
+            </Link>
           ))}
         </ul>
       </div>
