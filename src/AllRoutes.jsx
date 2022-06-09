@@ -9,6 +9,7 @@ import {
   ProductListing,
   LoginPage,
   SignupPage,
+  SingleProduct,
 } from './pages/index';
 
 const AllRoutes = () => (
@@ -31,10 +32,7 @@ const AllRoutes = () => (
       <Route path="/products" element={<ProductListing />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
-      <Route
-        path="/products/:productID"
-        element={<div style={{ fontSize: '10rem' }}>SINGLE PRODUCT</div>}
-      />
+      <Route path="/products/:productID" element={<SingleProduct />} />
     </Route>
     <Route path="*" element={<ErrorPage />} />
   </Routes>
