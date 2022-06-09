@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import { Navbar, Footer } from './components';
 import {
   HomePage,
   ErrorPage,
@@ -12,16 +13,38 @@ import {
 
 const AllRoutes = () => (
   <Routes>
+<<<<<<< Updated upstream
     <Route path="/" element={<HomePage />} />
     <Route path="/wishlist" element={<Wishlist />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/products" element={<ProductListing />} />
     <Route path="/login" element={<LoginPage />} />
     <Route path="/signup" element={<SignupPage />} />
+=======
+>>>>>>> Stashed changes
     <Route
-      path="/products/:productID"
-      element={<div style={{ fontSize: '10rem' }}>SINGLE PRODUCT</div>}
-    />
+      path="/"
+      element={
+        <div>
+          <header>
+            <Navbar />
+          </header>
+          <Outlet />
+          <Footer />
+        </div>
+      }
+    >
+      <Route index element={<HomePage />} />
+      <Route path="/wishlist" element={<Wishlist />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/products" element={<ProductListing />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
+      <Route
+        path="/products/:productID"
+        element={<div style={{ fontSize: '10rem' }}>SINGLE PRODUCT</div>}
+      />
+    </Route>
     <Route path="*" element={<ErrorPage />} />
   </Routes>
 );
