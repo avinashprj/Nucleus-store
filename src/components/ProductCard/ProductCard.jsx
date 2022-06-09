@@ -22,7 +22,11 @@ export const ProductCard = ({ singleProduct, children }) => {
       </button>
       <div className="card-img">
         <img src={singleProduct.imgUrl} alt={singleProduct.alt} />
+<<<<<<< Updated upstream
         <Link to="/products" className="card-img-overlay">
+=======
+        <Link to={`/products/${singleProduct.id}`} className="card-img-overlay">
+>>>>>>> Stashed changes
           <div className="card-img-overlay-symbol">
             <BiSearchAlt className="icon-link" />
           </div>
