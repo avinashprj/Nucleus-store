@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function useCloseOnClickOutside(ref, handler = '') {
   useEffect(() => {
@@ -32,4 +33,12 @@ function useMediaQuery(query) {
   return matches;
 }
 
-export { useCloseOnClickOutside, useMediaQuery };
+function useScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+}
+
+export { useCloseOnClickOutside, useMediaQuery, useScrollToTop };
