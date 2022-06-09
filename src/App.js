@@ -1,6 +1,6 @@
 import './App.css';
 import AllRoutes from './AllRoutes';
-import { useScrollToTop } from './utils/utils';
+import { useScrollToTop } from './CustomHooks/CustomHooks';
 
 function App() {
   useScrollToTop();
