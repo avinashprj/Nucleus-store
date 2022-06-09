@@ -1,0 +1,166 @@
+/* note: hero images CSS */
+
+.hero-images {
+  transition: 1s all;
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+}
+
+.hero > img {
+  inline-size: 100%;
+  object-fit: cover;
+}
+.hero-images::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-images .left-arrow {
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+}
+/* note: hero images CSS END*/
+
+.discount .title,
+.categories .title {
+  text-align: center;
+  padding: 3rem;
+  /* background-color: hsl(210, 36%, 96%); */
+  color: var(--clr-grey-1);
+  /* color: var(--clr-grey-1); */
+}
+.discount .title h3,
+.categories .title h3 {
+  text-transform: capitalize;
+  font-weight: 400;
+  /* font-size: 2.5rem; */
+}
+@media only screen and (max-width: 40.625em) {
+  .discount .title {
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .discount .title {
+    padding: 0.5rem;
+  }
+}
+
+/* note: hero cards CSS */
+.hero-cards {
+  max-width: 95rem;
+  margin: 0 auto;
+  width: 95%;
+  overflow-x: scroll;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+
+.hero-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.card-hero {
+  position: relative;
+  text-align: center;
+  min-width: 10.8rem;
+}
+.card-image {
+  width: 15rem;
+  background-color: var(--clr-grey-15);
+  height: auto;
+  border-radius: 1.2rem;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.card-image:hover {
+  background-color: var(--clr-grey-14);
+}
+@media only screen and (max-width: 37.5em) {
+  .card-image {
+    width: 12rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .card-image {
+    width: 10rem;
+  }
+  .hero-cards {
+    gap: 0.5rem;
+  }
+}
+.card-image img {
+  width: 100%;
+  display: block;
+}
+.card-image-desc {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.005rem;
+  margin-top: 1rem;
+}
+/* note: hero cards CSS END*/
+
+/* note: card grid */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 37.5em) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.card-grid .card-grid-container {
+  overflow: hidden;
+}
+/* .card-grid .card-grid-img {
+} */
+.card-grid .card-grid-img img {
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .card-grid .card-grid-img img {
+    border-radius: 0;
+  }
+}
+.card-image-desc {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 40.625em) {
+  .card-grid {
+    gap: 1rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+  }
+}
+
+/* note: card grid END*/
+
+/* slider css Changes */
+.react-slideshow-container .default-nav {
+  background: none;
+}
+.react-slideshow-container .default-nav:hover,
+.react-slideshow-container .default-nav:focus {
+  background: none;
+}
+.react-slideshow-container .default-nav svg {
+  transition: var(--transition);
+}
+.react-slideshow-container .default-nav:hover svg,
+.react-slideshow-container .default-nav:focus svg {
+  fill: var(--clr-primary-5);
+  transform: scale(1.1);
+}
