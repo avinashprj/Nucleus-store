@@ -1,0 +1,8 @@
+@import url(./HomePage/HomePage.module.css);
+@import url(./ErrorPage/ErrorPage.module.css);
+@import url(./AboutPage/AboutPage.module.css);
+@import url(./ProductListingPage/ProductListing.module.css);
+@import url(./Wishlist/Wishlist.module.css);
+@import url(./LoginPage/LoginPage.module.css);
+@import url(./SignupPage/SignupPage.module.css);
+@import url(./SingleProduct/SingleProduct.module.css);
