@@ -6,6 +6,8 @@ import {
   Wishlist,
   AboutPage,
   ProductListing,
+  LoginPage,
+  SignupPage,
 } from './pages/index';
 
 const AllRoutes = () => (
@@ -14,6 +16,8 @@ const AllRoutes = () => (
     <Route path="/wishlist" element={<Wishlist />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/products" element={<ProductListing />} />
+    <Route path="/login" element={<LoginPage />} />
+    <Route path="/signup" element={<SignupPage />} />
     <Route
       path="/products/:productID"
       element={<div style={{ fontSize: '10rem' }}>SINGLE PRODUCT</div>}
