@@ -13,15 +13,6 @@ import {
 
 const AllRoutes = () => (
   <Routes>
-<<<<<<< Updated upstream
-    <Route path="/" element={<HomePage />} />
-    <Route path="/wishlist" element={<Wishlist />} />
-    <Route path="/about" element={<AboutPage />} />
-    <Route path="/products" element={<ProductListing />} />
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/signup" element={<SignupPage />} />
-=======
->>>>>>> Stashed changes
     <Route
       path="/"
       element={
