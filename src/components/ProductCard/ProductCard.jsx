@@ -11,7 +11,6 @@ export const ProductCard = ({ singleProduct, children }) => {
       icon: <GiRoundStar key={i} className="red fs-small" />,
     });
   }
-  console.log(ratingsArray);
   return (
     <article className="card card-product">
       <span className="card-discount">
