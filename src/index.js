@@ -7,7 +7,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import App from './App';
 import { makeServer } from './server';
 import { ErrorFallback } from './utils/utils';
-
 // Call make Server
 makeServer();
 
