@@ -3,7 +3,6 @@ import { IoIosSearch } from 'react-icons/io';
 import { FiX } from 'react-icons/fi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsCart2, BsPerson } from 'react-icons/bs';
-
 import { Link } from 'react-router-dom';
 import { pageLinks } from './navbar.data';
 import { useCloseOnClickOutside } from '../../CustomHooks/CustomHooks';
@@ -35,7 +34,7 @@ export const Navbar = () => {
           <span />
         </button>
         <Link to="/" className="nav-logo">
-          Nucleus
+          Nuclues
         </Link>
       </div>
       <ul className="nav-links flex-al-center">

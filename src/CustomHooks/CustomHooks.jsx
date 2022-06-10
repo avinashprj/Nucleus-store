@@ -41,4 +41,32 @@ function useScrollToTop() {
   }, [pathname]);
 }
 
-export { useCloseOnClickOutside, useMediaQuery, useScrollToTop };
+function useLocalStorageState(
+  key,
+  defaultValue = '',
+  { serialize = JSON.stringify, deserialize = JSON.parse } = {}
+) {
+  // note: serialize and deserialize are functions that can be used by the user to do some custom operations on the data obtained from the localStorage like JSON.stringify and JSON.parse
+
+  const [state, setState] = useState(() => {
+    const valueInLocalStorage = window.localStorage.getItem(key);
+    if (valueInLocalStorage) {
+      return deserialize(valueInLocalStorage);
+    }
+    // note: defaultValue can be a function provided by user as it can be some computational heavy task and therefore we can lazy load it and call it only at the call and not at the initialization of our React.useState()
+
+    return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
+  });
+  useEffect(() => {
+    window.localStorage.setItem(key, serialize(state));
+  }, [key, state, serialize]);
+
+  return [state, setState];
+}
+
+export {
+  useCloseOnClickOutside,
+  useMediaQuery,
+  useScrollToTop,
+  useLocalStorageState,
+};
