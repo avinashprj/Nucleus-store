@@ -5,6 +5,7 @@ import { Footer } from './Footer/Footer';
 import { ProductCard } from './ProductCard/ProductCard';
 import { FiltersDesktop } from './Filters/FilterDesktop/FiltersDesktop';
 import { FilterPhone } from './Filters/FilterPhone/FilterPhone';
+import { SharedLayout } from './SharedLayout/SharedLayout';
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   ProductCard,
   FiltersDesktop,
   FilterPhone,
+  SharedLayout,
 };
