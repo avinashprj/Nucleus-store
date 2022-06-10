@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Outlet } from 'react-router-dom';
-import { Navbar, Footer } from './components';
+import { Navbar, Footer, SharedLayout } from './components';
+
 import {
   HomePage,
   ErrorPage,
@@ -14,18 +15,7 @@ import {
 
 const AllRoutes = () => (
   <Routes>
-    <Route
-      path="/"
-      element={
-        <div>
-          <header>
-            <Navbar />
-          </header>
-          <Outlet />
-          <Footer />
-        </div>
-      }
-    >
+    <Route path="/" element={<SharedLayout />}>
       <Route index element={<HomePage />} />
       <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/about" element={<AboutPage />} />
