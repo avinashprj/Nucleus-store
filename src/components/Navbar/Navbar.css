@@ -1,9 +1,11 @@
+header {
+  position: sticky;
+  top: 0rem;
+  z-index: 100;
+}
 .navbar {
   background-color: var(--clr-white);
-  position: sticky;
   height: 8rem;
-  top: 0;
-  z-index: 100;
   border-bottom: 1px solid var(--clr-grey-15);
   padding: 2rem 3rem;
   box-shadow: var(--lighter-shadow);

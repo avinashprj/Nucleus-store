@@ -1,0 +1,116 @@
+.auth-section {
+  min-height: 100vh;
+}
+.form {
+  outline: 2px solid var(--clr-grey-12);
+  border-radius: 5px;
+  box-shadow: var(--light-shadow);
+  width: 100%;
+  max-width: 45rem;
+  padding: 2rem;
+  transition: var(--transition);
+  transform: scale(1);
+}
+.form-signin.close {
+  display: none;
+}
+
+.form-input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--clr-grey-12);
+  border: none;
+  border-bottom: 3px solid transparent;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  transition: all 0.3s;
+}
+/* @media only screen and (max-width: 56.25em) {
+  .form__input {
+    width: 100%;
+  }
+} */
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #55c57a;
+}
+.form-input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+.form-input::-webkit-input-placeholder {
+  color: #999;
+}
+.form-group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 4%;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+.form-input:placeholder-shown + .form-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.form-radio-input {
+  display: none;
+}
+.form-radio-label {
+  font-size: 1.3rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 2rem;
+}
+.form-radio-button {
+  height: 1.4rem;
+  width: 1.4rem;
+  border: 1px solid var(--clr-primary-5);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.form-radio-button::after {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clr-primary-5);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.form-radio-input:checked ~ .form-radio-label .form-radio-button::after {
+  opacity: 1;
+}
+
+.form-forgot {
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+.form-forgot:hover {
+  color: var(--clr-primary-5);
+}
+.form-footer {
+  font-size: 1.2rem;
+}
+
+.form-footer-link {
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+}

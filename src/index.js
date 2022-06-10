@@ -7,6 +7,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
 import { makeServer } from './server';
+import { ErrorFallback } from './utils/utils';
 // Call make Server
 makeServer();
 const queryClient = new QueryClient(); // note: make instance of QueryClient
@@ -18,6 +19,7 @@ root.render(
         <QueryClientProvider client={queryClient}>
           <App />
         </QueryClientProvider>
+        <App />
       </ErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>

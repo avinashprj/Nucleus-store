@@ -35,7 +35,7 @@ export const Navbar = () => {
           <span />
         </button>
         <Link to="/" className="nav-logo">
-          Nucleus
+          Nuclues
         </Link>
       </div>
       <ul className="nav-links flex-al-center">
@@ -106,9 +106,9 @@ export const Navbar = () => {
         >
           <BsCart2 className="nav-icons" />
         </button>
-        <a href="./login.html" className="flex-al-center border-none">
+        <Link to="/login" className="flex-al-center border-none">
           <BsPerson className="nav-icons" />
-        </a>
+        </Link>
       </div>
       <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       <Cart

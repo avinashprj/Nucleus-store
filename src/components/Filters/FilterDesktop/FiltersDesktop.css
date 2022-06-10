@@ -1,0 +1,38 @@
+.side-filter {
+  padding: 3rem 2rem;
+}
+.filter-item {
+  padding-top: 1rem;
+}
+.filter-container::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 5px;
+}
+.filter-container::-webkit-scrollbar-thumb {
+  background: var(--clr-primary-5);
+  border-radius: 2rem;
+}
+
+/* Note:Handle on hover */
+
+.filter-container::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-primary-4);
+}
+
+/* Note:Track */
+
+.filter-container::-webkit-scrollbar-track {
+  background: var(--clr-grey-9);
+}
+
+/* note:phone filter */
+.phone-filter {
+  display: none;
+  /* display: grid; */
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.phone-filter .phone-filter-btn {
+  font-size: 1.7rem;
+  padding: 2rem 3rem;
+}

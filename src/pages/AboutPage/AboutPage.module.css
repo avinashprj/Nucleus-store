@@ -1,0 +1,18 @@
+.section {
+  padding: 5rem 0;
+}
+.about-text {
+  line-height: 2;
+  max-width: 45em;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.about-page .title {
+  color: var(--clr-grey-1);
+}
+
+.about-page .title .title-slash {
+  color: var(--clr-primary-5);
+  font-weight: 400;
+}
