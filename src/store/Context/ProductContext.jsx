@@ -17,30 +17,29 @@ const ProductContextProvider = ({ children }) => {
     initialState
   );
 
-  const { productsData, isLoading, isError, error } = useQuery(
-    'products',
-    fetchProducts
-  );
-  if (productsData) {
-    dispatch({ type: 'PRODUCTS', payload: productsData });
-  } else if (isError) {
-    throw new Error(`${error.message}`);
-  }
+  const { data, isLoading, isError } = useQuery('products', fetchProducts);
+  const productsArray = data?.data.products;
+  React.useEffect(() => {
+    if (productsArray) {
+      dispatch({ type: 'PRODUCTS', payload: productsArray });
+    }
+  }, [isLoading, productsArray]);
 
-  console.log(productsData);
+  const value = React.useMemo(
+    () => ({ productCurrentState, dispatch, isLoading, isError }),
+    [productCurrentState, isLoading, isError]
+  );
+
+  // note:value does not need dispatch for now in future please remove it if not necessary
 
   return (
-    <ProductContextProvider
-      value={{ productCurrentState, dispatch, isLoading }}
-    >
-      {children}
-    </ProductContextProvider>
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
 };
 
 const useProductContext = () => {
   const context = React.useContext(ProductContext);
-  if (!context) {
+  if (context === 'undefined') {
     throw new Error(
       'useProductContext must be use in a ProductContextProvider component'
     );

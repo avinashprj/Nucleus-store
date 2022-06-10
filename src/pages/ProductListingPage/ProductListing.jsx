@@ -1,17 +1,12 @@
 import React from 'react';
 
-import {
-  Footer,
-  Navbar,
-  FiltersDesktop,
-  FilterPhone,
-  ProductCard,
-} from '../../components';
+import { FiltersDesktop, FilterPhone, ProductCard } from '../../components';
 
 import { products } from '../../backend/db/products';
+import { useProductContext } from '../../store/index.store';
 
 export const ProductListing = () => {
-  const [state, useState] = React.useState();
+  const results = useProductContext();
   return (
     <>
       <main>
@@ -28,9 +23,23 @@ export const ProductListing = () => {
             <FiltersDesktop />
           </section>
           <section className="products-container">
-            {products.map((product) => (
-              <ProductCard key={product.id} singleProduct={product} />
-            ))}
+            {results?.isLoading && (
+              <img
+                style={{ width: '40rem' }}
+                src="https://raw.githubusercontent.com/avinashprj/comfy-store/dev/images/output-onlinegiftools.gif"
+                className=""
+                alt=""
+              />
+            )}
+            {!results?.isLoading &&
+              results?.productCurrentState.productsList.map((product) => (
+                <ProductCard key={product.id} singleProduct={product} />
+              ))}
+            {results?.isError && (
+              <div style={{ fontSize: '5rem' }}>
+                Something Went wrong while fetching products
+              </div>
+            )}
           </section>
         </section>
       </main>

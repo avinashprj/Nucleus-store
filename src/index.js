@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
 import { makeServer } from './server';
 import { ErrorFallback } from './utils/utils';
+import { ProductContextProvider } from './store/index.store';
 // Call make Server
 makeServer();
 const queryClient = new QueryClient(); // note: make instance of QueryClient
@@ -17,9 +18,10 @@ root.render(
     <BrowserRouter>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <QueryClientProvider client={queryClient}>
-          <App />
+          <ProductContextProvider>
+            <App />
+          </ProductContextProvider>
         </QueryClientProvider>
-        <App />
       </ErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>
