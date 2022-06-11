@@ -9,7 +9,7 @@ export const Footer = () => (
       <h2 className="m-bottom-small">Nucleus</h2>
       <div className="footer-socials">
         {socials.map((social) => (
-          <span>
+          <span key={social.id}>
             <a target="_blank" href={social.url} className="" rel="noreferrer">
               {social.logo}
             </a>

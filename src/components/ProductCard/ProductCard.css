@@ -1,3 +1,231 @@
 .red {
   fill: var(--clr-primary-5);
 }
+.card {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--light-shadow);
+  outline: 1px solid var(--clr-grey-9);
+}
+.card-product {
+  max-width: 35rem;
+}
+
+.card-discount {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  left: 0.5rem;
+  padding: 0.2rem;
+  width: 9rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--clr-primary-5);
+  text-transform: uppercase;
+}
+
+.card-discount::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  transform-origin: 100% 0;
+  transform: skew(-27deg);
+}
+
+.card-wishlist {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1;
+}
+.card-heart:hover {
+  fill: red;
+}
+
+.card-img {
+  position: relative;
+  text-align: center;
+  background: #c4c1c2;
+  transition: var(--transition);
+}
+
+.card-img > img {
+  width: 25rem;
+}
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.card-img:hover .card-img-overlay,
+.card-img:hover .card-img-overlay-symbol {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.card-img-overlay-symbol {
+  transition: var(--transition-medium);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* .card-img-overlay-symbol::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 50%;
+} */
+.card-img-overlay-symbol svg {
+  fill: white;
+  width: 4rem;
+  height: 4rem;
+}
+@media only screen and (max-width: 25em) {
+  /* .card-img > img {
+    width: 100%;
+  } */
+}
+
+.card-details {
+  background: #f8f9fa;
+  /* color: black; */
+}
+.card-stars > span > i {
+  color: var(--clr-primary-5);
+}
+
+.card-review {
+  font-size: 0.9rem;
+}
+
+.card-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 1.8rem;
+}
+
+.card-price {
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.card-price > span {
+  font-size: 1.1rem;
+  position: relative;
+  color: var(--clr-grey-6);
+  text-decoration: line-through;
+}
+
+.card-desc {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.4rem 0;
+}
+.card-desc span i {
+  color: var(--clr-primary-5);
+}
+
+/* Note: Card dismiss */
+.card.card-dismiss {
+  max-width: 35rem;
+  padding: 1rem 2rem;
+  color: var(--clr-white);
+  background-image: linear-gradient(
+    to left,
+    var(--clr-grey-1),
+    var(--clr-grey-4)
+  );
+}
+
+.card-dismiss .card-content {
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+.card-dismiss .card-link {
+  color: white;
+  transition: var(--transition-fast);
+}
+
+.card-dismiss .card-cross {
+  cursor: pointer;
+  transition: var(--transition-fast);
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+}
+.card-dismiss .card-cross:hover {
+  color: var(--clr-red-danger);
+}
+
+/* note: hero card */
+
+.card-hero {
+  position: relative;
+  text-align: center;
+  min-width: 108px;
+}
+.card-image {
+  width: 108px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  display: block;
+}
+.card-image-desc {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.005rem;
+  margin-top: 1rem;
+}
+
+/* note: card grid */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.card .card-grid .card-grid-container {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+/* .card-grid .card-grid-img {
+  height: 40rem;
+} */
+.card-grid .card-grid-img img {
+  object-fit: cover;
+}

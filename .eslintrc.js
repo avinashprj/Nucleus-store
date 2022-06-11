@@ -14,9 +14,10 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'react/jsx-no-useless-fragment': 0,
     'no-debugger': 0,
     'react/prop-types': 0,
-    'jsx-a11y/anchor-is-valid': false,
+    'jsx-a11y/anchor-is-valid': 0,
     camelcase: 0,
     'no-use-before-define': 'off',
     'button-has-type': 0,
@@ -114,12 +115,12 @@ module.exports = {
       },
     ],
     'jsx-a11y/href-no-hash': 'off',
-    'jsx-a11y/anchor-is-valid': [
-      'warn',
-      {
-        aspects: ['invalidHref'],
-      },
-    ],
+    // 'jsx-a11y/anchor-is-valid': [
+    //   'warn',
+    //   {
+    //     aspects: ['invalidHref'],
+    //   },
+    // ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/comma-dangle': ['off'],
