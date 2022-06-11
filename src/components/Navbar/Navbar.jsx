@@ -35,7 +35,7 @@ export const Navbar = () => {
           <span />
         </button>
         <Link to="/" className="nav-logo">
-          Nuclues
+          Nucleus
         </Link>
       </div>
       <ul className="nav-links flex-al-center">

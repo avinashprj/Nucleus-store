@@ -7,7 +7,7 @@ const ProductContext = React.createContext();
 const initialState = {
   sortBy: '',
   filterBy: { categories: [], color: [] },
-  rating: 0,
+  price: 0,
   productsList: [],
 };
 
@@ -19,6 +19,7 @@ const ProductContextProvider = ({ children }) => {
 
   const { data, isLoading, isError } = useQuery('products', fetchProducts);
   const productsArray = data?.data.products;
+
   React.useEffect(() => {
     if (productsArray) {
       dispatch({ type: 'PRODUCTS', payload: productsArray });
