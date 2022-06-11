@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function useCloseOnClickOutside(ref, handler = '') {
@@ -40,5 +40,36 @@ function useScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
 }
+function useLocalStorageState(
+  key,
+  defaultValue = '',
+  { serialize = JSON.stringify, deserialize = JSON.parse } = {}
+) {
+  const [state, setState] = useState(() => {
+    const valueInLocalStorage = window.localStorage.getItem(key);
+    if (valueInLocalStorage) {
+      return deserialize(valueInLocalStorage);
+    }
+    return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
+  });
+  // note: for checking if the key is changed by the user or someone else in between or while using the app
+  const prevKeyRef = useRef(key);
 
-export { useCloseOnClickOutside, useMediaQuery, useScrollToTop };
+  useEffect(() => {
+    const prevKey = prevKeyRef.current;
+    if (prevKey !== key) {
+      window.localStorage.removeItem(prevKey);
+    }
+    prevKeyRef.current = key;
+    window.localStorage.setItem(key, serialize(state));
+  }, [key, state, serialize]);
+
+  return [state, setState];
+}
+
+export {
+  useCloseOnClickOutside,
+  useMediaQuery,
+  useScrollToTop,
+  useLocalStorageState,
+};
