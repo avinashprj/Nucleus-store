@@ -1,12 +1,29 @@
 import React from 'react';
-
 import { FiltersDesktop, FilterPhone, ProductCard } from '../../components';
-
 import { products } from '../../backend/db/products';
 import { useProductContext } from '../../store/index.store';
+import {
+  getFilteredData,
+  getPricesData,
+  getSortedData,
+} from '../../components/Filters/FilterOperations';
+import { filtersData } from '../../components/Filters/Filters.data';
 
 export const ProductListing = () => {
-  const results = useProductContext();
+  const state = useProductContext();
+  let results = {};
+  if (state?.productCurrentState?.productsList) {
+    const filteredProducts = getFilteredData(
+      state.productCurrentState,
+      filtersData
+    );
+    const PricesData = getPricesData(
+      filteredProducts,
+      state?.productCurrentState.price
+    );
+    results = getSortedData(PricesData, state.productCurrentState.sortBy);
+  }
+
   return (
     <>
       <main>
@@ -23,7 +40,7 @@ export const ProductListing = () => {
             <FiltersDesktop />
           </section>
           <section className="products-container">
-            {results?.isLoading && (
+            {state?.isLoading && (
               <img
                 style={{ width: '40rem' }}
                 src="https://raw.githubusercontent.com/avinashprj/comfy-store/dev/images/output-onlinegiftools.gif"
@@ -31,11 +48,11 @@ export const ProductListing = () => {
                 alt=""
               />
             )}
-            {!results?.isLoading &&
-              results?.productCurrentState.productsList.map((product) => (
+            {!state?.isLoading &&
+              results?.map((product) => (
                 <ProductCard key={product.id} singleProduct={product} />
               ))}
-            {results?.isError && (
+            {state?.isError && (
               <div style={{ fontSize: '5rem' }}>
                 Something Went wrong while fetching products
               </div>
