@@ -7,10 +7,7 @@ import {
   getSortedData,
 } from '../../components/Filters/FilterOperations';
 import { filtersData } from '../../components/Filters/Filters.data';
-import {
-  useLocalStorageState,
-  useMediaQuery,
-} from '../../CustomHooks/CustomHooks';
+import { useMediaQuery } from '../../CustomHooks/CustomHooks';
 
 export const ProductListing = () => {
   const mobView = useMediaQuery('(max-width: 37.5em)');

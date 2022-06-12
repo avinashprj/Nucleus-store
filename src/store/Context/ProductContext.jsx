@@ -11,7 +11,7 @@ const initialState = {
   price: getMaxPrice(),
   productsList: [],
 };
-console.log(initialState, 'sssss');
+
 const ProductContextProvider = ({ children }) => {
   const [productCurrentState, dispatch] = React.useReducer(
     Reducer,
