@@ -67,6 +67,8 @@ function useLocalStorageState(
   return [state, setState];
 }
 
+// note: hooks for data fecthing
+
 export {
   useCloseOnClickOutside,
   useMediaQuery,

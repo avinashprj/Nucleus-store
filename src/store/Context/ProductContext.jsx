@@ -31,9 +31,6 @@ const ProductContextProvider = ({ children }) => {
     () => ({ productCurrentState, dispatch, isLoading, isError }),
     [productCurrentState, isLoading, isError]
   );
-
-  // note:value does not need dispatch for now in future please remove it if not necessary
-
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
