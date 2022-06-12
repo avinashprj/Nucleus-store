@@ -1,33 +1,50 @@
 import React from 'react';
+import { useParams } from 'react-router';
+import { useLocalStorageState } from '../../CustomHooks/CustomHooks';
+import { useProductContext } from '../../store/index.store';
 
-export const SingleProduct = ({ product }) => {
-  const [state, useState] = React.useState();
+export const SingleProduct = () => {
+  const { productID } = useParams();
+  const { productCurrentState } = useProductContext();
+  const singleProduct = productCurrentState?.productsList?.find(
+    (product) => product.id === productID
+  );
+  console.log(singleProduct);
+
   return (
     <main>
       <section className="page-hero">
         <div className="section-center">
           <h3 className="page-hero-title">
-            Home <span className="title-slash">/</span> Single Product
+            Home <span className="title-slash">/</span>
+            {singleProduct?.productTitle || 'product'}
           </h3>
         </div>
       </section>
       <section className="single-product">
         <div className="section-center single-product-center">
           <img
-            src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Mercury-1_540x.png?v=1639400857"
+            src={
+              singleProduct?.imgUrl ||
+              'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Mercury-1_540x.png?v=1639400857'
+            }
             className="single-product-img img"
             alt=""
           />
           <article className="single-product-info">
             <div>
-              <h2 className="single-product-title">Smart Watch</h2>
-              <p className="single-product-company text-slanted">by boat</p>
-              <p className="single-product-price">$30.00</p>
+              <h2 className="single-product-title">
+                {singleProduct?.productTitle || 'Smart Watch'}
+              </h2>
+              <p className="single-product-company text-slanted">{`by ${
+                singleProduct?.brand || 'boat'
+              }`}</p>
+              <p className="single-product-price">
+                ₹{singleProduct?.productPrice || 5000}
+              </p>
               <div className="single-product-colors" />
               <p className="single-product-desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
-                modi? Minima libero doloremque necessitatibus! Praesentium
-                recusandae quod nesciunt animi voluptatem!
+                {singleProduct?.productDesc}
               </p>
 
               <div className="single-product-btns flex-al-center">

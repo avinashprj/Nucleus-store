@@ -1,4 +1,5 @@
 import React from 'react';
+import { isError } from 'react-query';
 import { FiltersDesktop, FilterPhone, ProductCard } from '../../components';
 import { useProductContext } from '../../store/index.store';
 import {
@@ -71,7 +72,9 @@ export const ProductListing = () => {
                 Something Went wrong while fetching products
               </div>
             )}
-            {results.length === 0 && <h2>NO PRODUCTS FOUND</h2>}
+            {!state?.isLoading && !state?.isError && results.length === 0 && (
+              <h2>NO PRODUCTS FOUND</h2>
+            )}
           </section>
         </section>
       </main>
