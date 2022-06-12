@@ -19,8 +19,10 @@ function Reducer(state, { type, payload }) {
         newFilterProperty = newFilterProperty.filter(
           (item) => item !== selectedFilter
         );
+        console.log(newFilterProperty);
       } else {
         newFilterProperty = newFilterProperty.concat(selectedFilter);
+        console.log(newFilterProperty);
       }
       return {
         ...state,
@@ -30,8 +32,8 @@ function Reducer(state, { type, payload }) {
         },
       };
     }
-    case 'RATING': {
-      return { ...state, rating: payload };
+    case 'PRICE': {
+      return { ...state, price: payload };
     }
     case 'CLEAR FILTER': {
       return {
@@ -46,4 +48,23 @@ function Reducer(state, { type, payload }) {
       return state;
   }
 }
-export { Reducer };
+
+function dispatchFilterProperties(dispatch, payload) {
+  console.log(payload, 'payload');
+  dispatch({
+    type: 'FILTER',
+    payload: {
+      property: payload.property,
+      selection: payload.category,
+    },
+  });
+}
+
+function dispatchSort(dispatch, sortItem) {
+  dispatch({ type: 'SORT', payload: sortItem });
+}
+
+function dispatchPrice(dispatch, event) {
+  dispatch({ type: 'PRICE', payload: event.target.value });
+}
+export { Reducer, dispatchFilterProperties, dispatchSort, dispatchPrice };

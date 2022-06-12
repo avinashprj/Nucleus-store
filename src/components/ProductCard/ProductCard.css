@@ -11,7 +11,7 @@
   outline: 1px solid var(--clr-grey-9);
 }
 .card-product {
-  max-width: 35rem;
+  max-width: 28rem;
 }
 
 .card-discount {

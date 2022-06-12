@@ -6,9 +6,10 @@ import { heroCards, heroImages } from '../../data/data';
 import { categories } from '../../backend/db/categories';
 import { Footer } from '../../components/Footer/Footer';
 import { useMediaQuery } from '../../CustomHooks/CustomHooks';
+import { getMaxPrice } from '../../components/Filters/Filters.data';
 
 export const HomePage = () => {
-  const [autoplay, setAutoplay] = React.useState(true);
+  const [autoplay] = React.useState(true);
   const mobView = useMediaQuery('(max-width: 37.5em)');
   return (
     <main style={{ marginBottom: '8rem' }}>

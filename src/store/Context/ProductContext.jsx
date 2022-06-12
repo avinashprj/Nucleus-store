@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { getMaxPrice } from '../../components/Filters/Filters.data';
 import { fetchProducts } from '../../serverFetching/fetchProducts';
 import { Reducer } from '../Reducer/Reducer';
 
@@ -7,10 +8,10 @@ const ProductContext = React.createContext();
 const initialState = {
   sortBy: '',
   filterBy: { categories: [], color: [] },
-  price: 0,
+  price: getMaxPrice(),
   productsList: [],
 };
-
+console.log(initialState, 'sssss');
 const ProductContextProvider = ({ children }) => {
   const [productCurrentState, dispatch] = React.useReducer(
     Reducer,

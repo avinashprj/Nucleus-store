@@ -36,3 +36,7 @@
   font-size: 1.7rem;
   padding: 2rem 3rem;
 }
+.category-container > :last-child,
+.sort-container > :last-child {
+  margin-bottom: 1rem;
+}

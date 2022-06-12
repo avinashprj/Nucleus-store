@@ -1,4 +1,5 @@
 import React from 'react';
+import { products } from '../backend/db/products';
 
 function ErrorFallback({ error }) {
   return (
@@ -13,5 +14,16 @@ function ErrorFallback({ error }) {
     </div>
   );
 }
+function isChecked(property, listItem, productStates) {
+  return productStates.filterBy[property].includes(listItem);
+}
+const getDynamicPriceRange = (productData) =>
+  productData.reduce(
+    (priceRange, productCard) => [
+      Math.min(productCard.productPrice, priceRange[0]),
+      Math.max(productCard.productPrice, priceRange[1]),
+    ],
+    [Number.MAX_SAFE_INTEGER, 0]
+  );
 
-export { ErrorFallback };
+export { ErrorFallback, isChecked, getDynamicPriceRange };
