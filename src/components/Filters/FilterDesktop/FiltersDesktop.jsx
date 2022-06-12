@@ -1,81 +1,96 @@
 import React from 'react';
+
+import {
+  dispatchFilterProperties,
+  dispatchPrice,
+  dispatchSort,
+} from '../../../store/Reducer/Reducer';
+import { getDynamicPriceRange, isChecked } from '../../../utils/utils';
 import { filtersData, sortsData } from '../Filters.data';
 
-export const FiltersDesktop = () => (
-  <div className="side-filter">
-    <div className="filter-heading fs-medium">Sort</div>
-    <div className="sort-container m-left-smallest">
-      {sortsData?.map((category) => (
-        <div key={category} className="filter-item flex-al-center">
-          <input
-            type="radio"
-            className="radio-inp"
-            id="High to low"
-            name="radio-group"
-          />
-          <label
-            style={{ textTransform: 'capitalize' }}
-            htmlFor="watches-category"
-            className="fs-medium-small m-left-smallest grey"
-          >
-            {category}
-          </label>
-        </div>
-      ))}
-    </div>
-    <div className="filter-heading fs-medium">Categories</div>
-    <div className="filter-category-container m-left-smallest">
-      {filtersData?.categories.map((category) => (
-        <div key={category} className="filter-item flex-al-center">
-          <input
-            type="checkbox"
-            id="select-box"
-            name="bydefault"
-            value="watches-category"
-            className="checkbox pointer"
-          />
-          <label
-            style={{ textTransform: 'capitalize' }}
-            htmlFor="watches-category"
-            className="fs-medium-small m-left-smallest grey"
-          >
-            {category}
-          </label>
-        </div>
-      ))}
-    </div>
-    <div className="filter-heading fs-medium">Colors</div>
-    <div className="filter-colors-container m-left-smallest">
-      {filtersData?.color.map((category) => (
-        <div key={category} className="filter-item flex-al-center">
-          <input
-            type="checkbox"
-            id="select-box"
-            name="bydefault"
-            value="watches-category"
-            className="checkbox pointer"
-          />
-          <label
-            style={{ textTransform: 'capitalize' }}
-            htmlFor="watches-category"
-            className="fs-medium-small m-left-smallest grey"
-          >
-            {category}
-          </label>
-        </div>
-      ))}
-    </div>
+export const FiltersDesktop = ({ productState, dispatch }) => {
+  console.log(productState, 'ssssss');
 
-    <div className="filter-heading fs-medium-small">Rating</div>
-    <div className="flex-al-center filter-item slider-container">
-      <input type="range" min="0" max="5" value="3" className="slider-inp" />
-      <span className="slider-value m-left-smallest">0</span>
+  return (
+    <div className="side-filter">
+      <div className="filter-heading ">SORT</div>
+      <div className="sort-container m-left-smallest">
+        {sortsData?.map((category) => (
+          <div key={category} className="filter-item flex-al-center">
+            <input
+              type="radio"
+              className="radio-inp"
+              id={category}
+              checked={
+                productState.sortBy && productState.sortBy === `${category}`
+              }
+              name="sort"
+              onChange={() => dispatchSort(dispatch, category)}
+            />
+            <label
+              key={category}
+              style={{ textTransform: 'capitalize' }}
+              htmlFor={category}
+              className="fs-medium-small m-left-smallest grey"
+            >
+              {category}
+            </label>
+          </div>
+        ))}
+      </div>
+      {Object.keys(filtersData).map((property) => (
+        <div key={property}>
+          <div className="filter-heading ">{property?.toUpperCase()}</div>
+          <div className="category-container m-left-smallest">
+            {filtersData[property].map((category) => (
+              <div key={category}>
+                <div key={category} className="filter-item flex-al-center">
+                  <input
+                    type="checkbox"
+                    id={category}
+                    name={category}
+                    value={category}
+                    className="checkbox pointer"
+                    checked={isChecked(property, category, productState)}
+                    onChange={() =>
+                      dispatchFilterProperties(dispatch, { property, category })
+                    }
+                  />
+                  <label
+                    style={{ textTransform: 'capitalize' }}
+                    htmlFor={category}
+                    className="fs-medium-small m-left-smallest grey"
+                  >
+                    {category}
+                  </label>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div className="filter-heading fs-medium-small">Rating</div>
+      <div className="flex-al-center filter-item slider-container">
+        <input
+          type="range"
+          id="range"
+          min={getDynamicPriceRange(productState.productsList)[0]}
+          max={getDynamicPriceRange(productState.productsList)[1]}
+          defaultValue={getDynamicPriceRange(productState.productsList)[1]}
+          className="slider-inp"
+          onChange={(e) => dispatchPrice(dispatch, e)}
+        />
+        <span className="slider-value m-left-smallest">
+          {productState.price}
+        </span>
+      </div>
+      <button
+        type="submit"
+        className="btn btn-round btn-outline-primary clear-btn m-top-medium"
+      >
+        Clear Filters
+      </button>
     </div>
-    <button
-      type="submit"
-      className="btn btn-round btn-outline-primary clear-btn m-top-medium"
-    >
-      Clear Filters
-    </button>
-  </div>
-);
+  );
+};
