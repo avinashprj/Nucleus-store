@@ -21,7 +21,8 @@ export const products = [
     starRating: 5,
     reviews: 789,
     lazyLoading: "loading='lazy'",
-    category: 'earphones',
+    categories: 'wireless earphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -39,7 +40,8 @@ export const products = [
     starRating: 5,
     reviews: 42,
     lazyLoading: "loading='lazy'",
-    category: 'earphones',
+    categories: 'wireless earphones',
+    latest: false,
   },
   {
     imgUrl:
@@ -57,7 +59,8 @@ export const products = [
     starRating: 5,
     reviews: 83,
     lazyLoading: "loading='lazy'",
-    category: 'earphones',
+    categories: 'wireless earphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -74,7 +77,8 @@ export const products = [
     starRating: 5,
     reviews: 88,
     lazyLoading: "loading='lazy'",
-    category: 'smart watches',
+    categories: 'smart watches',
+    latest: false,
   },
   {
     imgUrl:
@@ -83,7 +87,7 @@ export const products = [
     id: uuid(),
     productTitle: 'Airdopes 141',
     brand: 'boAt',
-    color: 'green',
+    color: 'white',
     productDesc: `Bluetooth Version BLE5.0 Operating Temperature "-10°C" -  "45°C" Bluetooth Range 10M Battery Capacity 300mAh Working Time Up to 7-10 Days Charging Time around 2 Hours Charging Type Magnetic Charger Sports Mode 14 Sports Mode Call Alert Yes Music Control Yes Guided Meditative Breathing Yes Country Of Origin China Waterproof 5 ATM`,
     productPrice: 1499,
     productDiscpercent: 67,
@@ -91,7 +95,8 @@ export const products = [
     starRating: 5,
     reviews: 244,
     lazyLoading: "loading='lazy'",
-    category: 'earphones',
+    categories: 'wireless earphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -108,7 +113,8 @@ export const products = [
     starRating: 5,
     reviews: 241,
     lazyLoading: "loading='lazy'",
-    category: 'headphones',
+    categories: 'headphones',
+    latest: false,
   },
   {
     imgUrl:
@@ -125,7 +131,8 @@ export const products = [
     starRating: 5,
     reviews: 224,
     lazyLoading: "loading='lazy'",
-    category: 'headphones',
+    categories: 'headphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -142,7 +149,8 @@ export const products = [
     starRating: 5,
     reviews: 117,
     lazyLoading: "loading='lazy'",
-    category: 'headphones',
+    categories: 'headphones',
+    latest: false,
   },
   {
     imgUrl:
@@ -159,7 +167,8 @@ export const products = [
     starRating: 4.5,
     reviews: 11,
     lazyLoading: "loading='lazy'",
-    category: 'headphones',
+    categories: 'headphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -176,7 +185,8 @@ export const products = [
     starRating: 5,
     reviews: 325,
     lazyLoading: "loading='lazy'",
-    category: 'wireless earphones',
+    categories: 'wireless earphones',
+    latest: false,
   },
   {
     imgUrl:
@@ -193,7 +203,8 @@ export const products = [
     starRating: 5,
     reviews: 67,
     lazyLoading: "loading='lazy'",
-    category: 'wireless earphones',
+    categories: 'wireless earphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -210,7 +221,8 @@ export const products = [
     starRating: 5,
     reviews: 427,
     lazyLoading: "loading='lazy'",
-    category: 'wired earphones',
+    categories: 'wired earphones',
+    latest: false,
   },
   {
     imgUrl:
@@ -227,7 +239,8 @@ export const products = [
     starRating: 5,
     reviews: 126,
     lazyLoading: "loading='lazy'",
-    category: 'wired earphones',
+    categories: 'wired earphones',
+    latest: true,
   },
   {
     imgUrl:
@@ -244,7 +257,8 @@ export const products = [
     starRating: 5,
     reviews: 9,
     lazyLoading: "loading='lazy'",
-    category: 'wired earphones',
+    categories: 'wired earphones',
+    latest: false,
   },
   {
     imgUrl:
@@ -261,7 +275,8 @@ export const products = [
     starRating: 5,
     reviews: 337,
     lazyLoading: "loading='lazy'",
-    category: 'wired earphones',
+    categories: 'wired earphones',
+    latest: true,
   },
 ];
 
