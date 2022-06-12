@@ -7,27 +7,26 @@ import {
   getSortedData,
 } from '../../components/Filters/FilterOperations';
 import { filtersData } from '../../components/Filters/Filters.data';
-import { useMediaQuery } from '../../CustomHooks/CustomHooks';
+import {
+  useLocalStorageState,
+  useMediaQuery,
+} from '../../CustomHooks/CustomHooks';
 
 export const ProductListing = () => {
   const mobView = useMediaQuery('(max-width: 37.5em)');
   const state = useProductContext();
+
   let results = {};
   if (state?.productCurrentState?.productsList) {
     const filteredProducts = getFilteredData(
       state.productCurrentState,
       filtersData
     );
-    console.log(
-      filteredProducts,
-      state?.productCurrentState.price,
-      'ASSSSSSSS'
-    );
     const PricesData = getPricesData(
       filteredProducts,
       state?.productCurrentState.price
     );
-    console.log(PricesData, 'sassss');
+
     results = getSortedData(PricesData, state.productCurrentState.sortBy);
   }
 
@@ -80,7 +79,12 @@ export const ProductListing = () => {
         </section>
       </main>
 
-      <FilterPhone />
+      <FilterPhone
+        productState={
+          state.productCurrentState ? state.productCurrentState : ''
+        }
+        dispatch={state?.dispatch}
+      />
     </>
   );
 };

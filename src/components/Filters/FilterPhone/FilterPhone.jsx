@@ -1,8 +1,13 @@
 import React from 'react';
 import { useCloseOnClickOutside } from '../../../CustomHooks/CustomHooks';
+import {
+  dispatchSort,
+  dispatchFilterProperties,
+} from '../../../store/Reducer/Reducer';
 import { filtersData, sortsData } from '../Filters.data';
+import { isChecked } from '../../../utils/utils';
 
-export const FilterPhone = () => {
+export const FilterPhone = ({ productState, dispatch }) => {
   const [toggleSortModal, setToggleSortModal] = React.useState(false);
   const [toggleFilterModal, setToggleFilterModal] = React.useState(false);
   const toggleSortModalRef = React.useRef();
@@ -43,12 +48,18 @@ export const FilterPhone = () => {
                 <input
                   type="radio"
                   className="radio-inp"
-                  id="High to low"
+                  id={category}
                   name="radio-group"
+                  checked={
+                    productState.sortBy && productState.sortBy === `${category}`
+                  }
+                  onChange={() => {
+                    dispatchSort(dispatch, category);
+                  }}
                 />
                 <label
                   style={{ textTransform: 'capitalize' }}
-                  htmlFor="watches-category"
+                  htmlFor={category}
                   className="fs-medium-small m-left-smallest grey"
                 >
                   {category}
@@ -64,54 +75,41 @@ export const FilterPhone = () => {
         className={`filter-outer-container ${toggleFilterModal ? 'show' : ''}`}
       >
         <div ref={toggleFilterModalRef} className="filter-inner-container">
-          <div className="grid-2 flex-base flex-column">
-            <div className="filter-heading fs-medium">Filter</div>
-            <div className="divider" />
-            <div className="phone-filter-container m-left-smallest">
-              {filtersData?.categories.map((category) => (
-                <div key={category} className="filter-item flex-al-center">
-                  <input
-                    type="checkbox"
-                    id="select-box"
-                    name="bydefault"
-                    value="watches-category"
-                    className="checkbox pointer"
-                  />
-                  <label
-                    style={{ textTransform: 'capitalize' }}
-                    htmlFor="watches-category"
-                    className="fs-medium-small m-left-smallest grey"
-                  >
-                    {category}
-                  </label>
-                </div>
-              ))}
+          {Object.keys(filtersData).map((property) => (
+            <div key={property} className="grid-2 flex-base flex-column">
+              <div className="filter-heading ">{property?.toUpperCase()}</div>
+              <div className="divider" />
+              <div className="phone-filter-container m-left-smallest">
+                {filtersData[property].map((category) => (
+                  <div key={category}>
+                    <div key={category} className="filter-item flex-al-center">
+                      <input
+                        type="checkbox"
+                        id={category}
+                        name={category}
+                        value={category}
+                        className="checkbox pointer"
+                        checked={isChecked(property, category, productState)}
+                        onChange={() =>
+                          dispatchFilterProperties(dispatch, {
+                            property,
+                            category,
+                          })
+                        }
+                      />
+                      <label
+                        style={{ textTransform: 'capitalize' }}
+                        htmlFor={category}
+                        className="fs-medium-small m-left-smallest grey"
+                      >
+                        {category}
+                      </label>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="grid-2 flex-base flex-column">
-            <div className="filter-heading fs-medium">Colors</div>
-            <div className="divider" />
-            <div className="phone-filter-container m-left-smallest">
-              {filtersData?.color?.map((category) => (
-                <div key={category} className="filter-item flex-al-center">
-                  <input
-                    type="checkbox"
-                    id="select-box"
-                    name="bydefault"
-                    value="watches-category"
-                    className="checkbox pointer"
-                  />
-                  <label
-                    style={{ textTransform: 'capitalize' }}
-                    htmlFor="watches-category"
-                    className="fs-medium-small m-left-smallest grey"
-                  >
-                    {category}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </aside>
     </>

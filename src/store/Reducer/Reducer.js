@@ -1,3 +1,5 @@
+import { getMaxPrice } from '../../components/Filters/Filters.data';
+
 function Reducer(state, { type, payload }) {
   switch (type) {
     case 'LOGGEDIN': {
@@ -40,7 +42,7 @@ function Reducer(state, { type, payload }) {
         ...state,
         sortBy: '',
         filterBy: { categories: [], color: [] },
-        rating: 5,
+        price: getMaxPrice(),
       };
     }
 
@@ -67,4 +69,14 @@ function dispatchSort(dispatch, sortItem) {
 function dispatchPrice(dispatch, event) {
   dispatch({ type: 'PRICE', payload: event.target.value });
 }
-export { Reducer, dispatchFilterProperties, dispatchSort, dispatchPrice };
+
+function dispatchClearFilters(dispatch) {
+  dispatch({ type: 'CLEAR FILTER' });
+}
+export {
+  Reducer,
+  dispatchFilterProperties,
+  dispatchSort,
+  dispatchPrice,
+  dispatchClearFilters,
+};
