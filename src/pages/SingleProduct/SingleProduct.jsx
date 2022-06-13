@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { useLocalStorageState } from '../../CustomHooks/CustomHooks';
 import { useProductContext } from '../../store/index.store';
 
 export const SingleProduct = () => {
@@ -9,7 +8,7 @@ export const SingleProduct = () => {
   const singleProduct = productCurrentState?.productsList?.find(
     (product) => product.id === productID
   );
-  console.log(singleProduct);
+  console.log(singleProduct, 'aaaaa');
 
   return (
     <main>
@@ -17,30 +16,25 @@ export const SingleProduct = () => {
         <div className="section-center">
           <h3 className="page-hero-title">
             Home <span className="title-slash">/</span>
-            {singleProduct?.productTitle || 'product'}
+            {singleProduct?.productTitle}
           </h3>
         </div>
       </section>
       <section className="single-product">
         <div className="section-center single-product-center">
           <img
-            src={
-              singleProduct?.imgUrl ||
-              'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/Mercury-1_540x.png?v=1639400857'
-            }
+            src={singleProduct?.imgUrl}
             className="single-product-img img"
             alt=""
           />
           <article className="single-product-info">
             <div>
               <h2 className="single-product-title">
-                {singleProduct?.productTitle || 'Smart Watch'}
+                {singleProduct?.productTitle}
               </h2>
-              <p className="single-product-company text-slanted">{`by ${
-                singleProduct?.brand || 'boat'
-              }`}</p>
+              <p className="single-product-company text-slanted">{`by ${singleProduct?.brand}`}</p>
               <p className="single-product-price">
-                ₹{singleProduct?.productPrice || 5000}
+                ₹{singleProduct?.productPrice}
               </p>
               <div className="single-product-colors" />
               <p className="single-product-desc">
@@ -53,7 +47,7 @@ export const SingleProduct = () => {
                 </button>
                 <button
                   type="submit"
-                  className="wishlist-btn btn btn-squared btn-outline-secondary m-left-small"
+                  className="wishlist-btn btn btn-squared btn-outline-secondary m-left-small "
                   data-id="id"
                 >
                   <svg
