@@ -36,7 +36,7 @@ export const HomePage = () => {
         </div>
         <ul className="hero-cards ">
           {categories.map((category) => (
-            <li key={category.id}>
+            <li key={category._id}>
               <article className="card-hero">
                 <div>
                   <Link to="/products">
@@ -83,7 +83,7 @@ export const HomePage = () => {
                 <img
                   className="responsive"
                   src={singleCard.src}
-                  alt={singleCard.name}
+                  alt={singleCard.alt}
                 />
               </div>
             </Link>
