@@ -10,6 +10,9 @@ import App from './App';
 import { makeServer } from './server';
 import { ErrorFallback } from './utils/utils';
 import { ProductContextProvider } from './store/index.store';
+import { CartContextProvider } from './store/Context/CartContext';
+import { WishlistContextProvider } from './store/Context/WishlistContext';
+import { AuthContextProvider } from './store/Context/AuthContext';
 // Call make Server
 makeServer();
 
@@ -36,7 +39,13 @@ root.render(
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <QueryClientProvider client={queryClient}>
           <ProductContextProvider>
-            <App />
+            <CartContextProvider>
+              <WishlistContextProvider>
+                <AuthContextProvider>
+                  <App />
+                </AuthContextProvider>
+              </WishlistContextProvider>
+            </CartContextProvider>
           </ProductContextProvider>
         </QueryClientProvider>
       </ErrorBoundary>
