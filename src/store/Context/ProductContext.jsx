@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { getMaxPrice } from '../../components/Filters/Filters.data';
-import { fetchProducts } from '../../serverFetching/fetchProducts';
+import { fetchProducts } from '../../serverCalls/cartCalls/fetchProducts';
 import { Reducer } from '../Reducer/Reducer';
 
 const ProductContext = React.createContext();

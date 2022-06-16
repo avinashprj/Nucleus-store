@@ -1,5 +1,4 @@
 import React from 'react';
-import { isError } from 'react-query';
 import { FiltersDesktop, FilterPhone, ProductCard } from '../../components';
 import { useProductContext } from '../../store/index.store';
 import {
@@ -51,7 +50,7 @@ export const ProductListing = () => {
           <section
             className={`products-container ${
               results?.length > 0 && results?.length <= 4
-                ? ' products-container-start'
+                ? 'products-container-start'
                 : 'products-container-center'
             }`}
           >
