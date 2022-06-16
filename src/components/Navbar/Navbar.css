@@ -10,6 +10,44 @@ header {
   padding: 2rem 3rem;
   box-shadow: var(--lighter-shadow);
 }
+
+.navbar .logout-btn {
+  border-radius: 1rem;
+  border: 1px solid var(--clr-red-light);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.navbar-wishlist {
+  position: relative;
+}
+
+.navbar .nav-link-span {
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--clr-primary-6);
+  color: white;
+  border-radius: 50%;
+}
+.wishlist-span {
+  right: 4px;
+  top: -3px;
+}
+.cart-span {
+  right: -8px;
+  top: -3px;
+}
+
+.nav @media only screen and (max-width: 20em) {
+  .navbar .logout-btn {
+    font-size: 1.2rem;
+  }
+}
 .nav-toggle {
   display: none;
 }

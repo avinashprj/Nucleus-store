@@ -3,21 +3,25 @@ import { IoIosSearch } from 'react-icons/io';
 import { FiX } from 'react-icons/fi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsCart2, BsPerson } from 'react-icons/bs';
-
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { pageLinks } from './navbar.data';
 import { useCloseOnClickOutside } from '../../CustomHooks/CustomHooks';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { Cart } from '../Cart/Cart';
+import { logOutUser, useAuthContext } from '../../store/Context/AuthContext';
+import { useCartContext } from '../../store/Context/CartContext';
+import { useWishlistContext } from '../../store/Context/WishlistContext';
 
 export const Navbar = () => {
+  const { login, setUser, setLogin } = useAuthContext();
+  const { cart, setCart, toggleCartModal, setToggleCartModal } =
+    useCartContext();
+  const [wishlist, setWishlist] = useWishlistContext();
+  const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [toggleSearchModal, setToggleSearchModal] = React.useState(false);
-  const [toggleCartModal, setToggleCartModal] = React.useState(false);
   const searchBarModalRef = React.useRef(null);
   useCloseOnClickOutside(searchBarModalRef, setToggleSearchModal);
-  // note: modal outside click end
-
   return (
     <nav className="navbar flex-nav">
       <div className="nav-left flex-al-center">
@@ -95,20 +99,40 @@ export const Navbar = () => {
             </form>
           </div>
         </div>
-        <Link className="flex-al-center" to="/wishlist">
+        <Link className="flex-al-center navbar-wishlist" to="/wishlist">
           <AiOutlineHeart className="nav-icons m-right-small" />
+          {wishlist?.length ? (
+            <span className="nav-link-span wishlist-span">
+              {wishlist?.length}
+            </span>
+          ) : null}
         </Link>
         <button
           type="submit"
           onClick={() => setToggleCartModal(!toggleCartModal)}
-          className="flex-al-center toggle-cart m-right-small border-none"
+          className="flex-al-center toggle-cart m-right-small border-none relative"
           href="#"
         >
           <BsCart2 className="nav-icons" />
+          {cart?.length ? (
+            <span className="nav-link-span cart-span">{cart?.length}</span>
+          ) : null}
         </button>
-        <Link to="/login" className="flex-al-center border-none">
-          <BsPerson className="nav-icons" />
-        </Link>
+        {login ? (
+          <button
+            type="button"
+            onClick={() => {
+              logOutUser(setUser, setCart, setWishlist, setLogin, navigate);
+            }}
+            className="flex-al-center border-none logout-btn"
+          >
+            LOG OUT
+          </button>
+        ) : (
+          <Link to="/login" className="flex-al-center border-none">
+            <BsPerson className="nav-icons" />
+          </Link>
+        )}
       </div>
       <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       <Cart
