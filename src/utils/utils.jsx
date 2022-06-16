@@ -1,5 +1,4 @@
 import React from 'react';
-import { products } from '../backend/db/products';
 
 function ErrorFallback({ error }) {
   return (
@@ -26,4 +25,31 @@ const getDynamicPriceRange = (productData) =>
     [Number.MAX_SAFE_INTEGER, 0]
   );
 
-export { ErrorFallback, isChecked, getDynamicPriceRange };
+function alreadyPresent(state, product) {
+  return state.some((card) => card.id === product.id);
+}
+
+function isPresentInState(item, state) {
+  return state?.find((stateItem) => stateItem._id === item._id);
+}
+
+/* eslint-disable no-param-reassign */
+const cartTotalPrice = (cart) =>
+  cart.reduce((acc, item) => (acc += item.productPrice * item.qty), 0);
+
+const formatPrice = (price) => {
+  const formattedPrice = new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+  }).format(price);
+  return formattedPrice;
+};
+export {
+  ErrorFallback,
+  isChecked,
+  getDynamicPriceRange,
+  alreadyPresent,
+  isPresentInState,
+  cartTotalPrice,
+  formatPrice,
+};
