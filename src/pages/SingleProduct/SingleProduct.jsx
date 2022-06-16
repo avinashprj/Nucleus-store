@@ -1,14 +1,37 @@
 import React from 'react';
 import { useParams } from 'react-router';
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { useProductContext } from '../../store/index.store';
+import { NoProductsFound } from '../../components/index';
+import { useAddToCart, useCartContext } from '../../store/Context/CartContext';
+import { isPresentInState } from '../../utils/utils';
+import { useAuthContext } from '../../store/Context/AuthContext';
+import {
+  useAddToWishlist,
+  useDeleteFromWishlist,
+  useWishlistContext,
+} from '../../store/Context/WishlistContext';
 
 export const SingleProduct = () => {
   const { productID } = useParams();
   const { productCurrentState } = useProductContext();
   const singleProduct = productCurrentState?.productsList?.find(
-    (product) => product.id === productID
+    (product) => product._id === productID
   );
-  console.log(singleProduct, 'aaaaa');
+  const { mutate: addToCart, isLoading: isLoadingCart } = useAddToCart();
+  const { user } = useAuthContext();
+  const { cart, setCart, setToggleCartModal } = useCartContext();
+  const [wishlist, setWishlist] = useWishlistContext();
+  const { mutate: addToWishlist, isLoading: isLoadingWishlist } =
+    useAddToWishlist();
+  const { mutate: removeFromWishlist, isLoading: isDeletingWishlist } =
+    useDeleteFromWishlist();
+
+  if (!singleProduct) {
+    return <NoProductsFound />;
+  }
 
   return (
     <main>
@@ -42,22 +65,95 @@ export const SingleProduct = () => {
               </p>
 
               <div className="single-product-btns flex-al-center">
-                <button type="submit" className="btn btn-squared" data-id="id">
-                  add to cart
-                </button>
-                <button
-                  type="submit"
-                  className="wishlist-btn btn btn-squared btn-outline-secondary m-left-small "
-                  data-id="id"
-                >
-                  <svg
-                    className="wishlist-svg"
-                    id="icon-heart"
-                    viewBox="0 0 24 24"
+                {user.id ? (
+                  isPresentInState(singleProduct, cart) ? (
+                    <button
+                      onClick={() => setToggleCartModal((prev) => !prev)}
+                      type="button"
+                      className="btn btn-squared "
+                    >
+                      Go to Cart
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() =>
+                        addToCart(singleProduct, {
+                          onSuccess: ({ data: { cart: cartData } }) => {
+                            setCart(cartData);
+                          },
+                          onError: (error) => {
+                            toast.error(error.message);
+                          },
+                        })
+                      }
+                      disabled={isLoadingCart}
+                      type="submit"
+                      className="btn btn-squared "
+                    >
+                      Add to Cart
+                    </button>
+                  )
+                ) : (
+                  <Link to="/login" className="">
+                    <button
+                      onClick={() => toast.info('Please Log In First')}
+                      type="submit"
+                      className="btn btn-squared "
+                    >
+                      Add to Cart
+                    </button>
+                  </Link>
+                )}
+
+                {user.id ? (
+                  isPresentInState(singleProduct, wishlist) ? (
+                    <button
+                      disabled={isDeletingWishlist}
+                      onClick={() => {
+                        removeFromWishlist(singleProduct, {
+                          onSuccess: ({ data: { wishlist: wishlistData } }) => {
+                            setWishlist(wishlistData);
+                          },
+                          onError: () => {
+                            toast.error('error');
+                          },
+                        });
+                      }}
+                      type="submit"
+                      className="wishlist-btn btn btn-squared btn-outline-secondary m-left-small"
+                    >
+                      <AiFillHeart className="icon-svg added" />
+                    </button>
+                  ) : (
+                    <button
+                      disabled={isLoadingWishlist}
+                      onClick={() =>
+                        addToWishlist(singleProduct, {
+                          onSuccess: ({ data: { wishlist: wishlistData } }) => {
+                            setWishlist(wishlistData);
+                          },
+                        })
+                      }
+                      type="submit"
+                      className="wishlist-btn btn btn-squared btn-outline-secondary m-left-small"
+                    >
+                      <AiOutlineHeart className="icon-svg  card-white" />
+                    </button>
+                  )
+                ) : (
+                  <Link
+                    to="/login"
+                    className="wishlist-btn btn btn-squared btn-outline-secondary m-left-small"
                   >
-                    <path d="M20.133 5.317c0.88 0.881 1.319 2.031 1.319 3.184s-0.44 2.303-1.319 3.182l-8.133 8.133-8.133-8.133c-0.879-0.879-1.318-2.029-1.318-3.183s0.439-2.304 1.318-3.183 2.029-1.318 3.183-1.318 2.304 0.439 3.183 1.318l1.060 1.060c0.391 0.391 1.024 0.391 1.414 0l1.062-1.062c0.879-0.879 2.029-1.318 3.182-1.317s2.303 0.44 3.182 1.319zM21.547 3.903c-1.269-1.269-2.934-1.904-4.596-1.905s-3.327 0.634-4.597 1.903l-0.354 0.355-0.353-0.353c-1.269-1.269-2.935-1.904-4.597-1.904s-3.328 0.635-4.597 1.904-1.904 2.935-1.904 4.597 0.635 3.328 1.904 4.597l8.84 8.84c0.391 0.391 1.024 0.391 1.414 0l8.84-8.84c1.269-1.269 1.904-2.934 1.905-4.596s-0.634-3.327-1.905-4.598z" />
-                  </svg>
-                </button>
+                    <button
+                      className="border-none"
+                      onClick={() => toast.info('Please Log In First')}
+                      type="button"
+                    >
+                      <AiOutlineHeart className={`icon-svg card-white `} />
+                    </button>
+                  </Link>
+                )}
               </div>
             </div>
           </article>
