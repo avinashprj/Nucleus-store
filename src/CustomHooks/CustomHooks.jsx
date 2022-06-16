@@ -66,12 +66,28 @@ function useLocalStorageState(
 
   return [state, setState];
 }
+const useInput = (state) => {
+  const [inputState, setInputState] = useState(state);
+  const inputUpdate = (e) => {
+    const inpValue = e.target.value;
+    setInputState({
+      ...inputState,
+      [e.target.name]: inpValue,
+    });
+  };
+  return { inputState, inputUpdate };
+};
 
-// note: hooks for data fecthing
+const useLocalStorageSetItem = (itemName, itemValue) =>
+  localStorage.setItem(itemName, itemValue);
+const useLocalStorageGetItem = (itemName) => localStorage.getItem(itemName);
 
 export {
   useCloseOnClickOutside,
   useMediaQuery,
   useScrollToTop,
   useLocalStorageState,
+  useLocalStorageSetItem,
+  useLocalStorageGetItem,
+  useInput,
 };
