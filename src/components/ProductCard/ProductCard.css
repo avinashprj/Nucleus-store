@@ -1,6 +1,7 @@
-.red {
+.added {
   fill: var(--clr-primary-5);
 }
+
 .card {
   position: relative;
   width: 100%;

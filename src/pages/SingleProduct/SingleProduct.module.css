@@ -19,7 +19,9 @@
   min-height: 100vh;
   padding: 2rem 0;
 }
-
+.single-product .wishlist-btn:hover .card-white {
+  fill: var(--clr-white);
+}
 .single-product-center {
   margin: 2rem auto;
   display: grid;
@@ -64,7 +66,7 @@
   line-height: 1.8;
 }
 .single-product .wishlist-btn {
-  padding: 0.6em 1em;
+  padding: 0.8rem 1.5rem;
   display: grid;
   place-items: center;
 }
