@@ -14,6 +14,8 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'no-shadow': 0,
+    'no-nested-ternary': 0,
     'react/jsx-no-useless-fragment': 0,
     'no-debugger': 0,
     'react/prop-types': 0,
