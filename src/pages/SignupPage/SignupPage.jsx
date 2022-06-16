@@ -1,9 +1,53 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Footer, Navbar } from '../../components';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+import { useInput } from '../../CustomHooks/CustomHooks';
+import { useAuthContext, useSignUpUser } from '../../store/Context/AuthContext';
 
 export const SignupPage = () => {
-  const [state, useState] = React.useState();
+  const { inputState, inputUpdate } = useInput({
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+  const { setLogin } = useAuthContext();
+  const navigate = useNavigate();
+
+  const { user, setUser } = useAuthContext();
+  const { mutate: signupUser } = useSignUpUser();
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const passwordMatch = inputState.password === inputState.confirmPassword;
+    if (passwordMatch && inputState.password !== '') {
+      signupUser(inputState, {
+        onSuccess: (bigData) => {
+          setUser({ ...user, id: bigData.data.encodedToken });
+          setLogin(true);
+          localStorage.setItem('user-token', bigData.data.encodedToken);
+          toast.success('successfully signed in');
+          navigate('/');
+        },
+        onError: ({
+          response: {
+            data: { errors },
+          },
+        }) => {
+          alert(errors);
+        },
+      });
+    } else {
+      if (!passwordMatch) {
+        toast.error(`passwords don't match`);
+        return;
+      }
+
+      toast.error('please enter correct details');
+    }
+  };
+
   return (
     <main className="section-outer grid-center auth-section">
       <form action="#" className="form form-signup">
@@ -30,6 +74,8 @@ export const SignupPage = () => {
           <input
             id="name"
             type="name"
+            name="fullName"
+            onChange={inputUpdate}
             className="form-input"
             placeholder="Full Name"
             required
@@ -41,10 +87,11 @@ export const SignupPage = () => {
         <div className="form-signup-group">
           <input
             id="email"
+            name="email"
+            onChange={inputUpdate}
             type="email"
             className="form-input"
             placeholder="Email Address"
-            minLength="8"
             required
           />
           <label htmlFor="email" className="form-label">
@@ -55,9 +102,11 @@ export const SignupPage = () => {
           <input
             id="signup-password"
             type="password"
+            name="password"
+            onChange={inputUpdate}
             className="form-input"
             placeholder="Password"
-            minLength="8"
+            minLength="4"
             required
           />
           <label htmlFor="password" className="form-label">
@@ -68,9 +117,11 @@ export const SignupPage = () => {
           <input
             id="password"
             type="password"
+            name="confirmPassword"
+            onChange={inputUpdate}
             className="form-input"
             placeholder="Confirm Password"
-            minLength="8"
+            minLength="4"
             required
           />
           <label htmlFor="password" className="form-label">
@@ -80,6 +131,9 @@ export const SignupPage = () => {
 
         <div className="form-group">
           <button
+            onClick={(e) => {
+              handleSignUp(e);
+            }}
             type="submit"
             className="btn btn-squared btn-outline-secondary w-100 spacing-medium weight-600"
           >
