@@ -3,6 +3,7 @@ import { Response } from 'miragejs';
 import { formatDate } from '../utils/authUtils';
 
 const sign = require('jwt-encode');
+
 /**
  * All the routes related to Auth are present here.
  * These are Publicly accessible routes.
@@ -75,6 +76,7 @@ export const loginHandler = function (schema, request) {
         { _id: foundUser._id, email },
         process.env.REACT_APP_JWT_SECRET
       );
+
       foundUser.password = undefined;
       return new Response(200, {}, { foundUser, encodedToken });
     }
