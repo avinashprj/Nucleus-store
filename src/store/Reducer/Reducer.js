@@ -21,10 +21,8 @@ function Reducer(state, { type, payload }) {
         newFilterProperty = newFilterProperty.filter(
           (item) => item !== selectedFilter
         );
-        console.log(newFilterProperty);
       } else {
         newFilterProperty = newFilterProperty.concat(selectedFilter);
-        console.log(newFilterProperty);
       }
       return {
         ...state,
@@ -52,7 +50,6 @@ function Reducer(state, { type, payload }) {
 }
 
 function dispatchFilterProperties(dispatch, payload) {
-  console.log(payload, 'payload');
   dispatch({
     type: 'FILTER',
     payload: {
