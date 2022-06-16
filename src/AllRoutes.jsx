@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Outlet } from 'react-router-dom';
 import { Navbar, Footer, SharedLayout } from './components';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
-
+import MockAPI from './mock-api';
 import {
   HomePage,
   ErrorPage,
@@ -17,6 +17,7 @@ import {
 const AllRoutes = () => (
   <Routes>
     <Route path="/" element={<SharedLayout />}>
+      <Route path="/mockman" element={<MockAPI />} />
       <Route index element={<HomePage />} />
 
       <Route path="/about" element={<AboutPage />} />
