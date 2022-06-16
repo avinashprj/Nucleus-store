@@ -10,13 +10,13 @@
   transition: var(--transition);
   opacity: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: -100;
 }
 
 .cart-overlay.show {
   pointer-events: all;
   opacity: 1;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .cart {
@@ -38,6 +38,7 @@
 
 .show .cart {
   transform: translateX(0);
+  z-index: 10000000;
 }
 
 .cart-close {
