@@ -6,6 +6,7 @@ import { ProductCard } from './ProductCard/ProductCard';
 import { FiltersDesktop } from './Filters/FilterDesktop/FiltersDesktop';
 import { FilterPhone } from './Filters/FilterPhone/FilterPhone';
 import { SharedLayout } from './SharedLayout/SharedLayout';
+import { NoProductsFound } from './NoProductsFound/NoProductsFound';
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   FiltersDesktop,
   FilterPhone,
   SharedLayout,
+  NoProductsFound,
 };
