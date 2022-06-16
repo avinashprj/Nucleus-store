@@ -1,5 +1,4 @@
 import { v4 as uuid } from 'uuid';
-import bcyrpt from 'bcryptjs';
 import { formatDate } from '../utils/authUtils';
 /**
  * User Database can be added here.
