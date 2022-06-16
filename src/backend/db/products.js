@@ -9,7 +9,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/131matte_600x.png?v=1652798471',
     alt: 'Product of tws earphones',
-    id: 'b8fe324c-4979-4354-b346-81ce0fff8e54',
+    _id: 'b8fe324c-4979-4354-b346-81ce0fff8e54',
     productTitle: 'Airdopes 131 ',
     brand: 'boat',
     color: 'black',
@@ -28,7 +28,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/115-main3_600x.png?v=1650530657',
     alt: 'Product of tws earphones',
-    id: 'bb0ec543-4b15-4c95-a771-9d587c7d9eaf',
+    _id: 'bb0ec543-4b15-4c95-a771-9d587c7d9eaf',
     productTitle: 'Airdopes 115',
     brand: 'boAt',
     color: 'red',
@@ -47,7 +47,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662',
     alt: 'Product of bluetooth earphones',
-    id: '26ff83cd-ec8b-41d1-940f-e8bdf8b33a8b',
+    _id: '26ff83cd-ec8b-41d1-940f-e8bdf8b33a8b',
     productTitle: 'Rockerz 333',
     brand: 'boAt',
     color: 'black',
@@ -66,11 +66,11 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_600x.png?v=1650386995',
     alt: 'Product of Smart watch',
-    id: '742542cd-88ec-4c9e-96a1-5f9b8b1275c6',
+    _id: '742542cd-88ec-4c9e-96a1-5f9b8b1275c6',
     productTitle: 'Watch Xtend‌',
     brand: 'boAt',
     color: 'green',
-    productDesc: `Bluetooth Version BLE5.0 Operating Temperature "-10°C" -  "45°C" Bluetooth Range 10M Battery Capacity 300mAh Working Time Up to 7-10 Days Charging Time around 2 Hours Charging Type Magnetic Charger Sports Mode 14 Sports Mode Call Alert Yes Music Control Yes Guided Meditative Breathing Yes Country Of Origin China Waterproof 5 ATM`,
+    productDesc: `Bluetooth Version BLE5.0 Operating Temperature "-10°C" -  "45°C" Bluetooth Range 10M Battery Capacity 300mAh Working Time Up to 7-10 Days Charging Time around 2 Hours Charging Type Magnetic Charger Sports Mode 14 Sports Mode Call Alert Yes Music Control Yes Gu_ided Meditative Breathing Yes Country Of Origin China Waterproof 5 ATM`,
     productPrice: 2999,
     productDiscpercent: 62,
     productOgPrice: 7990,
@@ -84,11 +84,11 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/white_600x.png?v=1648723802',
     alt: 'Product of Smart watch',
-    id: '2c7368c5-59a9-4fa4-813b-fa4fd6998a79',
+    _id: '2c7368c5-59a9-4fa4-813b-fa4fd6998a79',
     productTitle: 'Airdopes 141',
     brand: 'boAt',
     color: 'white',
-    productDesc: `Bluetooth Version BLE5.0 Operating Temperature "-10°C" -  "45°C" Bluetooth Range 10M Battery Capacity 300mAh Working Time Up to 7-10 Days Charging Time around 2 Hours Charging Type Magnetic Charger Sports Mode 14 Sports Mode Call Alert Yes Music Control Yes Guided Meditative Breathing Yes Country Of Origin China Waterproof 5 ATM`,
+    productDesc: `Bluetooth Version BLE5.0 Operating Temperature "-10°C" -  "45°C" Bluetooth Range 10M Battery Capacity 300mAh Working Time Up to 7-10 Days Charging Time around 2 Hours Charging Type Magnetic Charger Sports Mode 14 Sports Mode Call Alert Yes Music Control Yes Gu_ided Meditative Breathing Yes Country Of Origin China Waterproof 5 ATM`,
     productPrice: 1499,
     productDiscpercent: 67,
     productOgPrice: 4490,
@@ -102,7 +102,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/0cfa4417-0213-4b49-b78e-0ae68aeb7057_600x.png?v=1625046144',
     alt: 'Product of Headphones',
-    id: '80ac0db7-c735-458e-885e-e7e9303b981e',
+    _id: '80ac0db7-c735-458e-885e-e7e9303b981e',
     productTitle: 'Rockerz 550',
     brand: 'boAt',
     color: 'Red',
@@ -120,7 +120,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ae22e3a6-9590-401a-94f6-d8ecf42b4932_600x.png?v=1625046351',
     alt: 'Product of Headphones',
-    id: 'ebd301d7-9d17-46f8-a7fe-0c5c494d5b2b',
+    _id: 'ebd301d7-9d17-46f8-a7fe-0c5c494d5b2b',
     productTitle: 'Rockerz 450',
     brand: 'boAt',
     color: 'sky blue',
@@ -138,7 +138,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/8d42bd81-b833-4fc7-9d54-90c603b5e9d0_600x.png?v=1625044984',
     alt: 'Product of Headphones',
-    id: '169ef3c1-ca7c-4622-be48-d158eb06c32b',
+    _id: '169ef3c1-ca7c-4622-be48-d158eb06c32b',
     productTitle: 'Rockerz 510',
     brand: 'boAt',
     color: 'red',
@@ -156,7 +156,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_c07e7a91-ebc0-44bd-87fa-7e3d8d897b06_600x.png?v=1644301639',
     alt: 'Product of Headphones',
-    id: '49cbf17a-2d3e-4ef2-9d1f-59d0e60df26d',
+    _id: '49cbf17a-2d3e-4ef2-9d1f-59d0e60df26d',
     productTitle: 'Nirvanaa 751 ANC',
     brand: 'boAt',
     color: 'grey',
@@ -174,11 +174,11 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/30292182-5454-42b0-b742-6c0954331d85_600x.png?v=1625045494',
     alt: 'Product of wireless earphones',
-    id: 'c6d940a2-c8ac-41aa-beda-9a42c4d9f414',
+    _id: 'c6d940a2-c8ac-41aa-beda-9a42c4d9f414',
     productTitle: 'Rockerz 255 Pro',
     brand: 'boAt',
     color: 'yellow',
-    productDesc: `Headphone Type Hybrid ANC Driver Size 40 mm drivers Playing Time 65 Hours (54 Hours with ANC) Charging Time 1 Hour Noise Cancellation Upto 33dB SNR 80dB Wireless Technology Type Bluetooth Bluetooth Version V5.0 Bluetooth Range 10 Meters Frequency Range 20Hz -20kHz Charging Interface Type C Country Of Origin China`,
+    productDesc: `Headphone Type Hybr_id ANC Driver Size 40 mm drivers Playing Time 65 Hours (54 Hours with ANC) Charging Time 1 Hour Noise Cancellation Upto 33dB SNR 80dB Wireless Technology Type Bluetooth Bluetooth Version V5.0 Bluetooth Range 10 Meters Frequency Range 20Hz -20kHz Charging Interface Type C Country Of Origin China`,
     productPrice: 1399,
     productDiscpercent: 60,
     productOgPrice: 3499,
@@ -192,7 +192,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/m1_dac5a6b1-7937-4cdf-be70-76bb5a1fcf49_600x.png?v=1639153081',
     alt: 'Product of wireless earphones',
-    id: 'a2404e41-ba3a-4575-8c1c-3e7dd73b4c0f',
+    _id: 'a2404e41-ba3a-4575-8c1c-3e7dd73b4c0f',
     productTitle: 'Rockerz 333 Pro',
     brand: 'boAt',
     color: 'black',
@@ -210,7 +210,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/103_600x.png?v=1574927262',
     alt: 'Product of wired earphones',
-    id: 'c5c4a001-68c5-4cb9-8f55-9319d644e852',
+    _id: 'c5c4a001-68c5-4cb9-8f55-9319d644e852',
     productTitle: 'BassHeads 103',
     brand: 'boAt',
     color: 'red',
@@ -228,7 +228,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/f87f98c3-9b52-4f7f-9ebe-dd10ee9517d9_600x.png?v=1633152280',
     alt: 'Product of wired earphones',
-    id: '805be03e-9c72-4e1a-aa30-f25789838bef',
+    _id: '805be03e-9c72-4e1a-aa30-f25789838bef',
     productTitle: 'BassHeads 102',
     brand: 'boAt',
     color: 'blue',
@@ -246,7 +246,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/d642ebc5-2e7d-4450-bffc-03cc157b7d6f_600x.png?v=1625046491',
     alt: 'Product of wired earphones',
-    id: 'a8bf6e15-ea74-4e07-b1a4-2a943f5ea007',
+    _id: 'a8bf6e15-ea74-4e07-b1a4-2a943f5ea007',
     productTitle: 'BassHeads 152',
     brand: 'boAt',
     color: 'white',
@@ -264,7 +264,7 @@ export const products = [
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/48f99cab-b0ac-4e12-a5b4-fca6af5adf47_600x.png?v=1625046259',
     alt: 'Product of wired earphones',
-    id: '2adb3749-71c0-41b0-90f9-566ce254cae4',
+    _id: '2adb3749-71c0-41b0-90f9-566ce254cae4',
     productTitle: 'BassHeads 100',
     brand: 'boAt',
     color: 'pink',
