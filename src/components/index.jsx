@@ -7,6 +7,7 @@ import { FiltersDesktop } from './Filters/FilterDesktop/FiltersDesktop';
 import { FilterPhone } from './Filters/FilterPhone/FilterPhone';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { NoProductsFound } from './NoProductsFound/NoProductsFound';
+import { Loader } from './Loader/Loader';
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   FilterPhone,
   SharedLayout,
   NoProductsFound,
+  Loader,
 };
