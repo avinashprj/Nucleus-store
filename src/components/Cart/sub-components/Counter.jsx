@@ -14,7 +14,7 @@ export const Counter = ({ product, setCart, changeQuantityCart }) => {
           setCart(cardData);
         },
         onError: (error) => {
-          toast.error(error.message);
+          toast.error(error.message, { position: 'top-left' });
         },
       }
     );
@@ -30,7 +30,7 @@ export const Counter = ({ product, setCart, changeQuantityCart }) => {
             setCart(cardData);
           },
           onError: (error) => {
-            toast.error(error.message);
+            toast.error(error.message, { position: 'top-left' });
           },
         }
       );
