@@ -1,7 +1,6 @@
 import React from 'react';
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { FiX } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useCloseOnClickOutside } from '../../CustomHooks/CustomHooks';
 import {
@@ -20,8 +19,10 @@ import {
   isPresentInState,
 } from '../../utils/utils';
 import { usePaymentIntegration } from '../../CustomHooks/usePaymentIntegration';
+import { Counter } from './sub-components/Counter';
 
 export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
+  const navigate = useNavigate();
   const { user } = useAuthContext();
   const cartRef = React.useRef(null);
   const { setCart, cart } = useCartContext();
@@ -68,11 +69,15 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                       onClick={() =>
                         removeFromCart(product._id, {
                           onSuccess: ({ data: { cart: cartData } }) => {
-                            toast.success('removed from cart');
+                            toast.success('removed from cart', {
+                              position: 'top-left',
+                            });
                             setCart(cartData);
                           },
                           onError: (error) => {
-                            toast.error(error.message);
+                            toast.error(error.message, {
+                              position: 'top-left',
+                            });
                           },
                         })
                       }
@@ -89,7 +94,9 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                             setCart(cartData);
                           },
                           onError: (error) => {
-                            toast.error(error.message);
+                            toast.error(error.message, {
+                              position: 'top-left',
+                            });
                           },
                         });
                         if (!isPresentInState(product, wishlist)) {
@@ -97,15 +104,21 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                             onSuccess: ({
                               data: { wishlist: wishListData },
                             }) => {
-                              toast.success('added to wishlist');
+                              toast.success('added to wishlist', {
+                                position: 'top-left',
+                              });
                               setWishlist(wishListData);
                             },
                             onError: (error) => {
-                              toast.error(error.message);
+                              toast.error(error.message, {
+                                position: 'top-left',
+                              });
                             },
                           });
                         } else {
-                          toast.info('Already in Wishlist ');
+                          toast.info('Already in Wishlist', {
+                            position: 'top-left',
+                          });
                         }
                       }}
                       type="submit"
@@ -116,67 +129,31 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                     </button>
                   </div>
                   <div className="">
-                    <button
-                      onClick={() => {
-                        changeQuantityCart(
-                          { product, type: 'increment' },
-                          {
-                            onSuccess: ({ data: { cart: cardData } }) => {
-                              setCart(cardData);
-                            },
-                            onError: (error) => {
-                              toast.error(error.message);
-                            },
-                          }
-                        );
-                      }}
-                      type="button"
-                      className="cart-item-increase-btn "
-                      data-id={product.id}
-                    >
-                      <IoIosArrowUp className="link fs-medium" />
-                    </button>
-                    <p className="cart-item-amount" data-id={product.id}>
-                      {product.qty}
-                    </p>
-                    <button
-                      onClick={() => {
-                        if (product.qty >= 2) {
-                          changeQuantityCart(
-                            { product, type: 'decrement' },
-                            {
-                              onSuccess: ({ data: { cart: cardData } }) => {
-                                setCart(cardData);
-                              },
-                              onError: (error) => {
-                                toast.error(error.message);
-                              },
-                            }
-                          );
-                        } else {
-                          removeFromCart(product._id, {
-                            onSuccess: ({ data: { cart: cartData } }) => {
-                              setCart(cartData);
-                            },
-                            onError: (error) => {
-                              toast.error(error.message);
-                            },
-                          });
-                        }
-                      }}
-                      type="button"
-                      className="cart-item-decrease-btn"
-                      data-id="rec43w3ipXvP28vog"
-                    >
-                      <IoIosArrowDown className="link fs-medium" />
-                    </button>
+                    <Counter
+                      product={product}
+                      setCart={setCart}
+                      changeQuantityCart={changeQuantityCart}
+                      removeFromCart={removeFromCart}
+                    />
                   </div>
                 </article>
               ))}
             {cart?.length === 0 && (
-              <p className="center" style={{ marginTop: '4rem' }}>
-                Add some products to the cart
-              </p>
+              <div className="flex flex-column">
+                <p className="center" style={{ marginTop: '4rem' }}>
+                  Add some products to the cart
+                </p>
+                <button
+                  onClick={() => {
+                    setToggleCartModal((prev) => !prev);
+                    navigate('/products');
+                  }}
+                  type="button"
+                  className="btn btn-squared  m-top-medium"
+                >
+                  Products
+                </button>
+              </div>
             )}
           </div>
         ) : (
