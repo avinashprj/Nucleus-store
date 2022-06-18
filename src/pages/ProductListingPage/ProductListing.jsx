@@ -49,7 +49,9 @@ export const ProductListing = () => {
           </section>
           <section
             className={`products-container ${
-              results?.length > 0 && results?.length <= 4
+              mobView
+                ? 'products-container-center'
+                : results?.length > 0 && results?.length <= 4
                 ? 'products-container-start'
                 : 'products-container-center'
             }`}

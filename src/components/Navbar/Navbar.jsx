@@ -21,9 +21,10 @@ export const Navbar = () => {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [toggleSearchModal, setToggleSearchModal] = React.useState(false);
   const searchBarModalRef = React.useRef(null);
+  const navRef = React.useRef(null);
   useCloseOnClickOutside(searchBarModalRef, setToggleSearchModal);
   return (
-    <nav className="navbar flex-nav">
+    <nav ref={navRef} className="navbar flex-nav">
       <div className="nav-left flex-al-center">
         <button
           onClick={() => setShowSidebar(!showSidebar)}
@@ -134,7 +135,11 @@ export const Navbar = () => {
           </Link>
         )}
       </div>
-      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      <Sidebar
+        showSidebar={showSidebar}
+        setShowSidebar={setShowSidebar}
+        navRef={navRef}
+      />
       <Cart
         toggleCartModal={toggleCartModal}
         setToggleCartModal={setToggleCartModal}

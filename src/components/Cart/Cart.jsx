@@ -169,7 +169,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
             </Link>
           </div>
         )}
-        {user.id ? (
+        {user.id && cart?.length ? (
           <footer>
             <h3 className="cart-total text-slanted">
               total: {cart && formatPrice(cartTotalPrice(cart))}

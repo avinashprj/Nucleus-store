@@ -11,6 +11,23 @@
   box-shadow: var(--light-shadow);
   outline: 1px solid var(--clr-grey-9);
 }
+/* .card {
+  box-shadow: var(--light-shadow);
+  outline: 1px solid var(--clr-grey-9);
+  transition: var(--transition);
+  border-radius: 4px;
+  position: relative;
+  min-width: 25rem;
+  max-width: 38rem;
+  flex-grow: 2;
+  flex-shrink: 2;
+  width: 30rem;
+  margin: 1rem 0;
+  flex-shrink: 1;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-clr);
+  cursor: pointer;
+} */
 .card-product {
   max-width: 28rem;
 }

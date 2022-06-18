@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCloseOnClickOutside } from '../../CustomHooks/CustomHooks';
 import { pageLinks } from '../Navbar/navbar.data';
 
-const Sidebar = ({ showSidebar, setShowSidebar }) => {
+const Sidebar = ({ showSidebar, setShowSidebar, navRef }) => {
   const sidebarModalRef = React.useRef(null);
-  useCloseOnClickOutside(sidebarModalRef, setShowSidebar);
+  // useCloseOnClickOutside(sidebarModalRef, setShowSidebar);
   return (
     <aside className={`sidebar-modal ${showSidebar ? 'open' : ''}`}>
       <div
