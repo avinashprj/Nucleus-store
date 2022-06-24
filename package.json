@@ -16,6 +16,8 @@
     "jwt-encode": "^1.0.1",
     "miragejs": "^0.1.45",
     "mockman-js": "^1.1.5",
+    "motion": "^10.10.2",
+    "motion-hooks": "^0.1.1",
     "razorpay": "^2.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

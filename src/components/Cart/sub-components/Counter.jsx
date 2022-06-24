@@ -1,12 +1,28 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
+import { useMotionAnimate } from 'motion-hooks';
 
 export const Counter = ({ product, setCart, changeQuantityCart }) => {
+  const counterRef = React.useRef(null);
   const [value, setValue] = React.useState(product?.qty || 0);
+  const { play: playIncrease } = useMotionAnimate(
+    counterRef,
+    { y: [5, 20, -10, 0], opacity: [1, 0, 0, 1] },
+    { duration: 0.5 }
+  );
+
+  const { play: playDecrease } = useMotionAnimate(
+    counterRef,
+    { y: [0, -10, 20, 0], opacity: [1, 0, 0, 1] },
+    { duration: 0.5 }
+  );
 
   const handleIncrease = () => {
-    setValue((prev) => prev + 1);
+    playIncrease();
+    setTimeout(() => {
+      setValue((prev) => prev + 1);
+    }, 100);
     changeQuantityCart(
       { product, type: 'increment' },
       {
@@ -21,7 +37,11 @@ export const Counter = ({ product, setCart, changeQuantityCart }) => {
   };
 
   const handleDecrease = () => {
-    setValue((prev) => (prev === 1 ? prev : prev - 1));
+    playDecrease();
+    setTimeout(() => {
+      setValue((prev) => (prev === 1 ? prev : prev - 1));
+    }, 100);
+
     if (value !== 1) {
       changeQuantityCart(
         { product, type: 'decrement' },
@@ -49,7 +69,7 @@ export const Counter = ({ product, setCart, changeQuantityCart }) => {
       >
         <IoIosArrowUp className="link fs-medium" />
       </button>
-      <p className="cart-item-amount" data-id={product.id}>
+      <p ref={counterRef} className="cart-item-amount" data-id={product.id}>
         {value}
       </p>
       <button
