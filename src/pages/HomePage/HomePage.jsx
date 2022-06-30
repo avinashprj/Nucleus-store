@@ -1,16 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, createSearchParams } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image';
-import { Navbar } from '../../components';
 import { heroCards, heroImages } from '../../data/data';
 import { categories } from '../../backend/db/categories';
-import { Footer } from '../../components/Footer/Footer';
 import { useMediaQuery } from '../../CustomHooks/CustomHooks';
-import { getMaxPrice } from '../../components/Filters/Filters.data';
 
 export const HomePage = () => {
   const [autoplay] = React.useState(true);
   const mobView = useMediaQuery('(max-width: 37.5em)');
+  const navigate = useNavigate();
   return (
     <main style={{ marginBottom: '8rem' }}>
       <section className="hero-images slider">
@@ -39,12 +37,23 @@ export const HomePage = () => {
             <li key={category._id}>
               <article className="card-hero">
                 <div>
-                  <Link to="/products">
+                  <button
+                    type="submit"
+                    className="border-none"
+                    onClick={() =>
+                      navigate({
+                        pathname: 'products',
+                        search: createSearchParams({
+                          category: category.type,
+                        }).toString(),
+                      })
+                    }
+                  >
                     <div className="card-image">
                       <img src={category.src} alt="" />
                     </div>
                     <p className="card-image-desc">{category.type}</p>
-                  </Link>
+                  </button>
                 </div>
               </article>
             </li>

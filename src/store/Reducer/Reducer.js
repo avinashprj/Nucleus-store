@@ -15,8 +15,14 @@ function Reducer(state, { type, payload }) {
       return { ...state, sortBy: payload };
     }
     case 'FILTER': {
+      console.log(payload);
+      console.log(state.filterBy);
       let newFilterProperty = state.filterBy[payload.property];
+      console.log(newFilterProperty, 'NEW');
+
       const selectedFilter = payload.selection;
+      console.log(selectedFilter, 'seelcted');
+
       if (state.filterBy[payload.property].includes(selectedFilter)) {
         newFilterProperty = newFilterProperty.filter(
           (item) => item !== selectedFilter
@@ -24,6 +30,8 @@ function Reducer(state, { type, payload }) {
       } else {
         newFilterProperty = newFilterProperty.concat(selectedFilter);
       }
+
+      console.log(newFilterProperty, 'NEWFILTER');
       return {
         ...state,
         filterBy: {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { FiltersDesktop, FilterPhone, ProductCard } from '../../components';
 import { useProductContext } from '../../store/index.store';
 import {
@@ -8,24 +9,54 @@ import {
 } from '../../components/Filters/FilterOperations';
 import { filtersData } from '../../components/Filters/Filters.data';
 import { useMediaQuery } from '../../CustomHooks/CustomHooks';
+import { dispatchFilterProperties } from '../../store/Reducer/Reducer';
 
 export const ProductListing = () => {
   const mobView = useMediaQuery('(max-width: 37.5em)');
   const state = useProductContext();
+  const [results, setResults] = React.useState([]);
+  const [searchParams] = useSearchParams();
+  const { dispatch } = useProductContext();
 
-  let results = {};
-  if (state?.productCurrentState?.productsList) {
-    const filteredProducts = getFilteredData(
-      state.productCurrentState,
-      filtersData
-    );
-    const PricesData = getPricesData(
-      filteredProducts,
-      state?.productCurrentState.price
-    );
+  // console.log(state?.productCurrentState);
+  React.useEffect(() => {
+    if (state?.productCurrentState?.productsList) {
+      let filteredProducts = [];
+      if ([...searchParams].length !== 0) {
+        // dispatchFilterProperties(dispatch, {
+        //   property: 'categories',
+        //   category: 'wired earphones',
+        // });
+        filteredProducts = getFilteredData(
+          state.productCurrentState,
+          filtersData
+        );
+      } else {
+        filteredProducts = getFilteredData(
+          state.productCurrentState,
+          filtersData
+        );
+      }
 
-    results = getSortedData(PricesData, state.productCurrentState.sortBy);
-  }
+      const PricesData = getPricesData(
+        filteredProducts,
+        state?.productCurrentState.price
+      );
+
+      const newResults = getSortedData(
+        PricesData,
+        state.productCurrentState.sortBy
+      );
+
+      setResults(newResults);
+    }
+  }, [
+    dispatch,
+    searchParams,
+    state.productCurrentState,
+    state.productCurrentState?.productsList,
+  ]);
+  // let results = [];
 
   return (
     <>

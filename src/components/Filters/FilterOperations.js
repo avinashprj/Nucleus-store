@@ -11,7 +11,6 @@ function getSortedData(productData, state) {
       : b.productPrice - a.productPrice
   );
 }
-// note: yet to add the latest sort filter
 
 function filterByEachCategory(products, category, filterBy) {
   return products.filter((product) => {
