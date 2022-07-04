@@ -12,7 +12,7 @@ function App() {
   React.useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
 
   return (
