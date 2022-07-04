@@ -10,7 +10,13 @@ export const Footer = () => (
       <div className="footer-socials">
         {socials.map((social) => (
           <span key={social.id}>
-            <a target="_blank" href={social.url} className="" rel="noreferrer">
+            <a
+              aria-label={social.id}
+              target="_blank"
+              href={social.url}
+              className=""
+              rel="noreferrer"
+            >
               {social.logo}
             </a>
           </span>

@@ -31,6 +31,7 @@ export const Navbar = () => {
           type="submit"
           id="btnHamburger"
           href="#"
+          aria-label="menu-icon"
           className={`nav-toggle hide-for-desktop m-right-small border-none ${
             showSidebar ? 'open' : ''
           }`}
@@ -63,12 +64,17 @@ export const Navbar = () => {
             className="flex-al-center"
             placeholder="Search for Products Here"
           />
-          <button className="flex-al-center" type="submit">
+          <button
+            aria-label="search-icon"
+            className="flex-al-center"
+            type="submit"
+          >
             <IoIosSearch className="nav-icons flex" />
           </button>
         </form>
         {/* Note: Desktop search bar END */}
         <button
+          aria-label="search-icon"
           onClick={() => setToggleSearchModal(!toggleSearchModal)}
           type="submit"
           className="flex-al-center search-symbol-mobile border-none"
@@ -88,13 +94,14 @@ export const Navbar = () => {
                 type="submit"
                 className="border-none"
                 id="search-close"
+                aria-label="cross-icon"
               >
                 <FiX className="nav-icons" />
               </button>
             </div>
             <form className="search-bar-center flex-al-center">
               <input placeholder="Search for Products Here" />
-              <button type="submit">
+              <button aria-label="search-icon" type="submit">
                 <IoIosSearch className="nav-icons " />
               </button>
             </form>
@@ -109,6 +116,7 @@ export const Navbar = () => {
           ) : null}
         </Link>
         <button
+          aria-label="cart-icon"
           type="submit"
           onClick={() => setToggleCartModal(!toggleCartModal)}
           className="flex-al-center toggle-cart m-right-small border-none relative"
@@ -121,6 +129,7 @@ export const Navbar = () => {
         </button>
         {login ? (
           <button
+            aria-label="logout-icon"
             type="button"
             onClick={() => {
               logOutUser(setUser, setCart, setWishlist, setLogin, navigate);

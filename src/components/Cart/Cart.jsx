@@ -41,6 +41,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
     <aside className={`cart-overlay ${toggleCartModal ? 'show' : ''}`}>
       <aside ref={cartRef} className="cart">
         <button
+          aria-label="close-icon"
           onClick={() => setToggleCartModal(!toggleCartModal)}
           type="submit"
           className="cart-close"
@@ -66,6 +67,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                     <h4 className="cart-item-name">{product.productTitle}</h4>
                     <p className="cart-item-price">₹{product.productPrice}</p>
                     <button
+                      aria-label="remove-from-cart-icon"
                       onClick={() =>
                         removeFromCart(product._id, {
                           onSuccess: ({ data: { cart: cartData } }) => {
@@ -88,6 +90,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                       Remove
                     </button>
                     <button
+                      aria-label="add-cart-icon"
                       onClick={() => {
                         removeFromCart(product._id, {
                           onSuccess: ({ data: { cart: cartData } }) => {
@@ -144,6 +147,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
                   Add some products to the cart
                 </p>
                 <button
+                  aria-label="go-to-products"
                   onClick={() => {
                     setToggleCartModal((prev) => !prev);
                     navigate('/products');
@@ -160,6 +164,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
           <div style={{ display: 'grid', placeItems: 'center' }}>
             <Link to="/login">
               <button
+                aria-label="log-in-redirect"
                 className="btn btn-squared"
                 type="button"
                 onClick={() => setToggleCartModal((prev) => !prev)}
@@ -175,6 +180,7 @@ export const Cart = ({ toggleCartModal, setToggleCartModal }) => {
               total: {cart && formatPrice(cartTotalPrice(cart))}
             </h3>
             <button
+              aria-label="checkout"
               onClick={() => {
                 displayRazorpay();
               }}

@@ -62,6 +62,7 @@ export const Counter = ({ product, setCart, changeQuantityCart }) => {
   return (
     <div>
       <button
+        aria-label="increase-icon"
         onClick={() => handleIncrease()}
         type="button"
         className="cart-item-increase-btn "
@@ -73,6 +74,7 @@ export const Counter = ({ product, setCart, changeQuantityCart }) => {
         {value}
       </p>
       <button
+        aria-label="decrease-icon"
         onClick={() => handleDecrease()}
         type="button"
         className="cart-item-decrease-btn"
