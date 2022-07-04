@@ -75,7 +75,7 @@ export const HomePage = () => {
                 <img
                   className="responsive"
                   src={singleCard?.src}
-                  alt={singleCard?.name}
+                  alt={singleCard?.alt}
                 />
               </div>
             </Link>

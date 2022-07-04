@@ -70,7 +70,11 @@ export const ProductCard = ({ singleProduct, children }) => {
           </button>
         )
       ) : (
-        <Link to="/login" className="card-wishlist border-none">
+        <Link
+          aria-label="login-icon"
+          to="/login"
+          className="card-wishlist border-none"
+        >
           <button
             className="border-none"
             onClick={() => toast.info('Please Log In First')}
@@ -84,6 +88,7 @@ export const ProductCard = ({ singleProduct, children }) => {
       <div className="card-img">
         <img src={singleProduct.imgUrl} alt={singleProduct.alt} />
         <Link
+          aria-label="go-to-singleProduct"
           to={`/products/${singleProduct._id}`}
           className="card-img-overlay"
         >

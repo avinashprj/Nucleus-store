@@ -14,21 +14,21 @@ const Sidebar = ({ showSidebar, setShowSidebar, navRef }) => {
       >
         <ul className="sidebar-links">
           {pageLinks.map((singleLink) => (
-            <Link
-              onClick={() => setShowSidebar(!showSidebar)}
-              key={singleLink?.id}
-              to={`${singleLink?.route}`}
-              className="link"
-            >
-              <li>
+            <li>
+              <Link
+                onClick={() => setShowSidebar(!showSidebar)}
+                key={singleLink?.id}
+                to={`${singleLink?.route}`}
+                className="link"
+              >
                 <div
                   style={{ display: 'inline-block' }}
                   className="link border-none"
                 >
                   {singleLink?.page}
                 </div>
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

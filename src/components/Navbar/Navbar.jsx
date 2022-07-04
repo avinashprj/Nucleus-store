@@ -107,7 +107,11 @@ export const Navbar = () => {
             </form>
           </div>
         </div>
-        <Link className="flex-al-center navbar-wishlist" to="/wishlist">
+        <Link
+          aria-label="wishlist"
+          className="flex-al-center navbar-wishlist"
+          to="/wishlist"
+        >
           <AiOutlineHeart className="nav-icons m-right-small" />
           {wishlist?.length ? (
             <span className="nav-link-span wishlist-span">
@@ -139,7 +143,11 @@ export const Navbar = () => {
             LOG OUT
           </button>
         ) : (
-          <Link to="/login" className="flex-al-center border-none">
+          <Link
+            aria-label="login-icon"
+            to="/login"
+            className="flex-al-center border-none"
+          >
             <BsPerson className="nav-icons" />
           </Link>
         )}
