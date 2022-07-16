@@ -11,6 +11,7 @@ import { Cart } from '../Cart/Cart';
 import { logOutUser, useAuthContext } from '../../store/Context/AuthContext';
 import { useCartContext } from '../../store/Context/CartContext';
 import { useWishlistContext } from '../../store/Context/WishlistContext';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 export const Navbar = () => {
   const { login, setUser, setLogin } = useAuthContext();
@@ -20,9 +21,9 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = React.useState(false);
   const [toggleSearchModal, setToggleSearchModal] = React.useState(false);
-  const searchBarModalRef = React.useRef(null);
+
   const navRef = React.useRef(null);
-  useCloseOnClickOutside(searchBarModalRef, setToggleSearchModal);
+
   return (
     <nav ref={navRef} className="navbar flex-nav">
       <div className="nav-left flex-al-center">
@@ -59,54 +60,11 @@ export const Navbar = () => {
       </ul>
       <div className="nav-right flex-al-center">
         {/* Note: Desktop search bar */}
-        <form className="search-bar-center-desktop flex-al-center m-right-small">
-          <input
-            className="flex-al-center"
-            placeholder="Search for Products Here"
-          />
-          <button
-            aria-label="search-icon"
-            className="flex-al-center"
-            type="submit"
-          >
-            <IoIosSearch className="nav-icons flex" />
-          </button>
-        </form>
-        {/* Note: Desktop search bar END */}
-        <button
-          aria-label="search-icon"
-          onClick={() => setToggleSearchModal(!toggleSearchModal)}
-          type="submit"
-          className="flex-al-center search-symbol-mobile border-none"
-          href="#"
-        >
-          <IoIosSearch className="nav-icons m-right-small" />
-        </button>
-        <div className={`search-bar-modal ${toggleSearchModal ? 'open' : ''}`}>
-          <div
-            ref={searchBarModalRef}
-            className={`search-bar ${toggleSearchModal ? 'open' : ''}`}
-          >
-            <div className="search-bar-heading flex-nav">
-              <span>What are you looking for?</span>
-              <button
-                onClick={() => setToggleSearchModal(!toggleSearchModal)}
-                type="submit"
-                className="border-none"
-                id="search-close"
-                aria-label="cross-icon"
-              >
-                <FiX className="nav-icons" />
-              </button>
-            </div>
-            <form className="search-bar-center flex-al-center">
-              <input placeholder="Search for Products Here" />
-              <button aria-label="search-icon" type="submit">
-                <IoIosSearch className="nav-icons " />
-              </button>
-            </form>
-          </div>
-        </div>
+        <SearchBar
+          setToggleSearchModal={setToggleSearchModal}
+          toggleSearchModal={toggleSearchModal}
+        />
+
         <Link
           aria-label="wishlist"
           className="flex-al-center navbar-wishlist"

@@ -75,7 +75,7 @@ const useInput = (state) => {
       [e.target.name]: inpValue,
     });
   };
-  return { inputState, inputUpdate };
+  return { inputState, inputUpdate, setInputState };
 };
 
 const useLocalStorageSetItem = (itemName, itemValue) =>

@@ -8,8 +8,10 @@ import { FilterPhone } from './Filters/FilterPhone/FilterPhone';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { NoProductsFound } from './NoProductsFound/NoProductsFound';
 import { Loader } from './Loader/Loader';
+import { SearchBar } from './SearchBar/SearchBar';
 
 export {
+  SearchBar,
   Navbar,
   Sidebar,
   Cart,
