@@ -19,19 +19,20 @@ npm run build
 ```
 
 ## Preview
-<img width="1440" alt="Screenshot 2022-07-12 at 12 06 16 AM" src="https://user-images.githubusercontent.com/76595361/178334525-1dbd44ca-2c52-4019-8700-4a7906e143ed.png">
+![image](https://user-images.githubusercontent.com/76595361/184506106-513d938f-d156-459b-8003-3ee8e59aac6e.png)
+
+![image](https://user-images.githubusercontent.com/76595361/184506092-bf344815-8a6c-44fa-baf6-2201f661ab98.png)
 
 
 
 
 ## Tech Stack
-React, react-query, Vanilla CSS and Auth using JWT
+Next.js, Context-API, Material-UI.
 
 ## Features
-- Add products to cart or wishlist
-- Filter products by various categories and colors
-- Sort products by price, high to low, low to high and latest
-- Sort and filters according to the columns
+- Read about all TV shows
+- All the details about TV shows
+- Search your favourite TV shows
 - Fully Responsive mobile friendly design
 
 ### Connect With Me
