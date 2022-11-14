@@ -17,9 +17,12 @@ export const Upload = () => {
   });
 
   const [url, setUrl] = useState('');
-  const uploadImage = async () => {
+
+  const getImageUrl = async (e) => {
+    setImage(e.target.files[0]);
+    e.preventDefault();
     const data = new FormData();
-    data.append('file', image);
+    data.append('file', e.target.files[0]);
     data.append('upload_preset', 'avinash');
     try {
       const res = await fetch(
@@ -31,8 +34,14 @@ export const Upload = () => {
       );
       const newData = await res.json();
       setUrl(newData.url);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const uploadImage = async () => {
+    try {
       const newProduct = {
-        imgUrl: newData.url,
+        imgUrl: url,
         alt: inputState.name,
         _id: uuid(),
         productTitle: inputState.name,
@@ -159,7 +168,7 @@ export const Upload = () => {
                 type="file"
                 name="file"
                 id="file"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={(e) => getImageUrl(e)}
               />
               <label htmlFor="file">
                 <div>
@@ -181,6 +190,20 @@ export const Upload = () => {
               </div>
             )}
           </div>
+          {url && (
+            <div>
+              <img
+                style={{
+                  width: '70%',
+                  margin: '1rem 0',
+                  outline: '1px solid grey',
+                  borderRadius: '1rem',
+                }}
+                src={url}
+                alt="product"
+              />
+            </div>
+          )}
 
           <div>
             <button
