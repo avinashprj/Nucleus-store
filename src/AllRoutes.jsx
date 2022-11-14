@@ -12,6 +12,7 @@ import {
   LoginPage,
   SignupPage,
   SingleProduct,
+  Upload,
 } from './pages/index';
 
 const AllRoutes = () => (
@@ -22,6 +23,7 @@ const AllRoutes = () => (
 
       <Route path="/about" element={<AboutPage />} />
       <Route path="/products" element={<ProductListing />} />
+      <Route path="/upload" element={<Upload />} />
       <Route path="/" element={<PrivateRoute />}>
         <Route path="/wishlist" element={<Wishlist />} />
       </Route>

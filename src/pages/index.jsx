@@ -6,6 +6,7 @@ import { LoginPage } from './LoginPage/LoginPage';
 import { SignupPage } from './SignupPage/SignupPage';
 import { SingleProduct } from './SingleProduct/SingleProduct';
 import { HomePage } from './HomePage/HomePage';
+import { Upload } from './Upload/Upload';
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   LoginPage,
   SignupPage,
   SingleProduct,
+  Upload,
 };

@@ -18,12 +18,10 @@ export const ProductListing = () => {
   const [results, setResults] = React.useState([]);
   const { dispatch } = useProductContext();
   const { searchQueryResult, setSearchQueryResult } = useSearchContext();
-  console.log(search.get('query'));
   const searchQuery = search.get('query');
 
   React.useEffect(() => {
     if (searchQuery === null && state?.productCurrentState?.productsList) {
-      console.log(searchQuery === null, 'asdsd');
       let filteredProducts = [];
 
       filteredProducts = getFilteredData(
@@ -43,7 +41,6 @@ export const ProductListing = () => {
 
       setResults(newResults);
     } else if (searchQuery !== null) {
-      console.log(searchQuery.trim());
       setSearchQueryResult(
         state?.productCurrentState?.productsList.filter((word) =>
           word.productTitle

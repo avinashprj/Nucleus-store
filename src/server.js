@@ -16,6 +16,7 @@ import {
 import {
   getAllProductsHandler,
   getProductHandler,
+  uploadProductHandler,
 } from './backend/controllers/ProductController';
 import {
   addItemToWishlistHandler,
@@ -62,7 +63,8 @@ export function makeServer({ environment = 'development' } = {}) {
       this.post('/auth/login', loginHandler.bind(this));
 
       // products routes (public)
-      this.get('/products', getAllProductsHandler.bind(this));
+      this.post('/product/upload', uploadProductHandler.bind(this));
+      this.get('/products', getAllProductsHandler.bind(this), { timing: 10 });
       this.get('/products/:productId', getProductHandler.bind(this));
 
       // categories routes (public)
@@ -84,6 +86,9 @@ export function makeServer({ environment = 'development' } = {}) {
       this.delete(
         '/user/wishlist/:productId',
         removeItemFromWishlistHandler.bind(this)
+      );
+      this.passthrough(
+        'https://api.cloudinary.com/v1_1/avinashprj/image/upload'
       );
     },
   });

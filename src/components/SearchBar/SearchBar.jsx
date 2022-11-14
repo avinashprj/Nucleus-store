@@ -21,14 +21,11 @@ export const SearchBar = ({ setToggleSearchModal, toggleSearchModal }) => {
     searchText: '',
   });
 
-  console.log(searchText);
-
   const {
     productCurrentState: { productsList },
   } = useProductContext();
   const { setSearchResult, searchResult } = useSearchContext();
 
-  console.log(productsList);
   const timerId = React.useRef(null);
   React.useEffect(() => {
     clearTimeout(timerId.current);
@@ -57,7 +54,6 @@ export const SearchBar = ({ setToggleSearchModal, toggleSearchModal }) => {
       });
     }
   };
-  console.log(searchResult, 'SSSS');
   return (
     <>
       <form
