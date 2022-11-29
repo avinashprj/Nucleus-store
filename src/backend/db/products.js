@@ -5,63 +5,63 @@ import { v4 as uuid } from 'uuid';
  * You can add products of your wish with different attributes
  * */
 export const products = [
-  {
-    imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/131matte_600x.png?v=1652798471',
-    alt: 'Product of tws earphones',
-    _id: 'b8fe324c-4979-4354-b346-81ce0fff8e54',
-    productTitle: 'Airdopes 131 ',
-    brand: 'boat',
-    color: 'black',
-    productDesc:
-      'Headphone Type: TWS Earbuds HD Sound: Yes Bluetooth Version: V5.0+EDR Driver Size: 13mm x 2 Drivers Bluetooth Profiles: HSP, HFP, A2DP, AVRCP Frequency: 20Hz-20KHz Voice Assistant: Yes ',
-    productPrice: 1199,
-    productDiscpercent: 60,
-    productOgPrice: 2990,
-    starRating: 5,
-    reviews: 789,
-    lazyLoading: "loading='lazy'",
-    categories: 'wireless earphones',
-    latest: true,
-  },
-  {
-    imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/115-main3_600x.png?v=1650530657',
-    alt: 'Product of tws earphones',
-    _id: 'bb0ec543-4b15-4c95-a771-9d587c7d9eaf',
-    productTitle: 'Airdopes 115',
-    brand: 'boAt',
-    color: 'red',
-    productDesc:
-      'Headphone Type: TWS Earbuds Driver Size: 13mm HD Sound: Yes Bluetooth Version: V5.2 Driver Size: 13mm x 2 Drivers Bluetooth Profiles: HSP, HFP, A2DP, AVRCP Frequency: 20Hz-20KHz Voice Assistant: Yes ',
-    productPrice: 1499,
-    productDiscpercent: 50,
-    productOgPrice: 2990,
-    starRating: 5,
-    reviews: 42,
-    lazyLoading: "loading='lazy'",
-    categories: 'wireless earphones',
-    latest: false,
-  },
-  {
-    imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662',
-    alt: 'Product of bluetooth earphones',
-    _id: '26ff83cd-ec8b-41d1-940f-e8bdf8b33a8b',
-    productTitle: 'Rockerz 333',
-    brand: 'boAt',
-    color: 'black',
-    productDesc:
-      'Headphone Type: In-Ear Driver Size: 13mm HD Sound: Yes Bluetooth Version: V5.2 Driver Size: 13mm x 2 Drivers Bluetooth Profiles: HSP, HFP, A2DP, AVRCP Frequency: 20Hz-20KHz Voice Assistant: Yes ',
-    productPrice: 1499,
-    productDiscpercent: 62,
-    productOgPrice: 3990,
-    starRating: 5,
-    reviews: 83,
-    lazyLoading: "loading='lazy'",
-    categories: 'wireless earphones',
-    latest: true,
-  },
+//   {
+//     imgUrl:
+//       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/131matte_600x.png?v=1652798471',
+//     alt: 'Product of tws earphones',
+//     _id: 'b8fe324c-4979-4354-b346-81ce0fff8e54',
+//     productTitle: 'Airdopes 131 ',
+//     brand: 'boat',
+//     color: 'black',
+//     productDesc:
+//       'Headphone Type: TWS Earbuds HD Sound: Yes Bluetooth Version: V5.0+EDR Driver Size: 13mm x 2 Drivers Bluetooth Profiles: HSP, HFP, A2DP, AVRCP Frequency: 20Hz-20KHz Voice Assistant: Yes ',
+//     productPrice: 1199,
+//     productDiscpercent: 60,
+//     productOgPrice: 2990,
+//     starRating: 5,
+//     reviews: 789,
+//     lazyLoading: "loading='lazy'",
+//     categories: 'wireless earphones',
+//     latest: true,
+//   },
+//   {
+//     imgUrl:
+//       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/115-main3_600x.png?v=1650530657',
+//     alt: 'Product of tws earphones',
+//     _id: 'bb0ec543-4b15-4c95-a771-9d587c7d9eaf',
+//     productTitle: 'Airdopes 115',
+//     brand: 'boAt',
+//     color: 'red',
+//     productDesc:
+//       'Headphone Type: TWS Earbuds Driver Size: 13mm HD Sound: Yes Bluetooth Version: V5.2 Driver Size: 13mm x 2 Drivers Bluetooth Profiles: HSP, HFP, A2DP, AVRCP Frequency: 20Hz-20KHz Voice Assistant: Yes ',
+//     productPrice: 1499,
+//     productDiscpercent: 50,
+//     productOgPrice: 2990,
+//     starRating: 5,
+//     reviews: 42,
+//     lazyLoading: "loading='lazy'",
+//     categories: 'wireless earphones',
+//     latest: false,
+//   },
+//   {
+//     imgUrl:
+//       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662',
+//     alt: 'Product of bluetooth earphones',
+//     _id: '26ff83cd-ec8b-41d1-940f-e8bdf8b33a8b',
+//     productTitle: 'Rockerz 333',
+//     brand: 'boAt',
+//     color: 'black',
+//     productDesc:
+//       'Headphone Type: In-Ear Driver Size: 13mm HD Sound: Yes Bluetooth Version: V5.2 Driver Size: 13mm x 2 Drivers Bluetooth Profiles: HSP, HFP, A2DP, AVRCP Frequency: 20Hz-20KHz Voice Assistant: Yes ',
+//     productPrice: 1499,
+//     productDiscpercent: 62,
+//     productOgPrice: 3990,
+//     starRating: 5,
+//     reviews: 83,
+//     lazyLoading: "loading='lazy'",
+//     categories: 'wireless earphones',
+//     latest: true,
+//   },
   {
     imgUrl:
       'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_600x.png?v=1650386995',
