@@ -7,7 +7,7 @@ import { v4 as uuid } from 'uuid';
 export const products = [
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/131matte_600x.png?v=1652798471',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669831321/CA131-main_600x_arf9at.png',
     alt: 'Product of tws earphones',
     _id: 'b8fe324c-4979-4354-b346-81ce0fff8e54',
     productTitle: 'Airdopes 131 ',
@@ -26,7 +26,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/115-main3_600x.png?v=1650530657',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669831397/115-main1_600x_x0jnjl.png',
     alt: 'Product of tws earphones',
     _id: 'bb0ec543-4b15-4c95-a771-9d587c7d9eaf',
     productTitle: 'Airdopes 115',
@@ -45,7 +45,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333-1_600x.png?v=1641801662',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834293/4_1_600x_jjaqcv.png',
     alt: 'Product of bluetooth earphones',
     _id: '26ff83cd-ec8b-41d1-940f-e8bdf8b33a8b',
     productTitle: 'Rockerz 333',
@@ -64,7 +64,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_600x.png?v=1650386995',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834385/main1_600x_mgk9lj.png',
     alt: 'Product of Smart watch',
     _id: '742542cd-88ec-4c9e-96a1-5f9b8b1275c6',
     productTitle: 'Watch Xtend‌',
@@ -82,7 +82,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/white_600x.png?v=1648723802',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834437/white_600x_dzc4kv.png',
     alt: 'Product of Smart watch',
     _id: '2c7368c5-59a9-4fa4-813b-fa4fd6998a79',
     productTitle: 'Airdopes 141',
@@ -100,7 +100,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/0cfa4417-0213-4b49-b78e-0ae68aeb7057_600x.png?v=1625046144',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834460/0cfa4417-0213-4b49-b78e-0ae68aeb7057_600x_tqhmog.png',
     alt: 'Product of Headphones',
     _id: '80ac0db7-c735-458e-885e-e7e9303b981e',
     productTitle: 'Rockerz 550',
@@ -118,7 +118,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ae22e3a6-9590-401a-94f6-d8ecf42b4932_600x.png?v=1625046351',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834502/ae22e3a6-9590-401a-94f6-d8ecf42b4932_600x_ayriha.png',
     alt: 'Product of Headphones',
     _id: 'ebd301d7-9d17-46f8-a7fe-0c5c494d5b2b',
     productTitle: 'Rockerz 450',
@@ -136,7 +136,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/8d42bd81-b833-4fc7-9d54-90c603b5e9d0_600x.png?v=1625044984',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834522/8d42bd81-b833-4fc7-9d54-90c603b5e9d0_600x_o6x1bj.png',
     alt: 'Product of Headphones',
     _id: '169ef3c1-ca7c-4622-be48-d158eb06c32b',
     productTitle: 'Rockerz 510',
@@ -154,7 +154,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_c07e7a91-ebc0-44bd-87fa-7e3d8d897b06_600x.png?v=1644301639',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834546/main1_c07e7a91-ebc0-44bd-87fa-7e3d8d897b06_600x_m8tf6f.png',
     alt: 'Product of Headphones',
     _id: '49cbf17a-2d3e-4ef2-9d1f-59d0e60df26d',
     productTitle: 'Nirvanaa 751 ANC',
@@ -172,7 +172,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/30292182-5454-42b0-b742-6c0954331d85_600x.png?v=1625045494',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834581/30292182-5454-42b0-b742-6c0954331d85_600x_uyf67x.png',
     alt: 'Product of wireless earphones',
     _id: 'c6d940a2-c8ac-41aa-beda-9a42c4d9f414',
     productTitle: 'Rockerz 255 Pro',
@@ -190,7 +190,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/m1_dac5a6b1-7937-4cdf-be70-76bb5a1fcf49_600x.png?v=1639153081',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834615/m1_dac5a6b1-7937-4cdf-be70-76bb5a1fcf49_600x_al5pz7.png',
     alt: 'Product of wireless earphones',
     _id: 'a2404e41-ba3a-4575-8c1c-3e7dd73b4c0f',
     productTitle: 'Rockerz 333 Pro',
@@ -208,7 +208,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/103_600x.png?v=1574927262',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834633/103_600x_iyib9o.png',
     alt: 'Product of wired earphones',
     _id: 'c5c4a001-68c5-4cb9-8f55-9319d644e852',
     productTitle: 'BassHeads 103',
@@ -226,7 +226,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/f87f98c3-9b52-4f7f-9ebe-dd10ee9517d9_600x.png?v=1633152280',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834648/f87f98c3-9b52-4f7f-9ebe-dd10ee9517d9_600x_nxx0tr.png',
     alt: 'Product of wired earphones',
     _id: '805be03e-9c72-4e1a-aa30-f25789838bef',
     productTitle: 'BassHeads 102',
@@ -244,7 +244,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/d642ebc5-2e7d-4450-bffc-03cc157b7d6f_600x.png?v=1625046491',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834666/d642ebc5-2e7d-4450-bffc-03cc157b7d6f_600x_pcseup.png',
     alt: 'Product of wired earphones',
     _id: 'a8bf6e15-ea74-4e07-b1a4-2a943f5ea007',
     productTitle: 'BassHeads 152',
@@ -262,7 +262,7 @@ export const products = [
   },
   {
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0057/8938/4802/products/48f99cab-b0ac-4e12-a5b4-fca6af5adf47_600x.png?v=1625046259',
+      'https://res.cloudinary.com/avinashprj/image/upload/v1669834686/48f99cab-b0ac-4e12-a5b4-fca6af5adf47_600x_wjk9ez.png',
     alt: 'Product of wired earphones',
     _id: '2adb3749-71c0-41b0-90f9-566ce254cae4',
     productTitle: 'BassHeads 100',
