@@ -18,7 +18,6 @@ import {
 const AllRoutes = () => (
   <Routes>
     <Route path="/" element={<SharedLayout />}>
-      <Route path="/mockman" element={<MockAPI />} />
       <Route index element={<HomePage />} />
 
       <Route path="/about" element={<AboutPage />} />

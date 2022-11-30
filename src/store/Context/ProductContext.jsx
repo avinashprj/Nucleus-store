@@ -20,6 +20,7 @@ const ProductContextProvider = ({ children }) => {
 
   const { data, isLoading, isError } = useQuery('products', fetchProducts);
   const productsArray = data?.data.products;
+  console.log(data, 'DATATTAAA');
 
   React.useEffect(() => {
     if (productsArray) {

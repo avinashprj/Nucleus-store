@@ -1,12 +1,12 @@
 /* @import url("https://unpkg.com/mockman-js@latest/dist/style.css"); */
-@import "react-slideshow-image/dist/styles.css";
-@import url("https://nucleus-ui.vercel.app/css/utils.css");
-@import url("https://nucleus-ui.vercel.app/components/button/button.css");
-@import url("../components/index.components.css");
-@import url("../pages/index.pages.module.css");
-@import url("../utils/utils.react.css");
+@import 'react-slideshow-image/dist/styles.css';
+@import url('https://nucleus-ui.vercel.app/css/utils.css');
+@import url('https://nucleus-ui.vercel.app/components/button/button.css');
+@import url('../components/index.components.css');
+@import url('../pages/index.pages.module.css');
+@import url('../utils/utils.react.css');
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
