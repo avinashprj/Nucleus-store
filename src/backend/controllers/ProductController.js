@@ -34,3 +34,18 @@ export const getProductHandler = function (schema, request) {
     );
   }
 };
+export const uploadProductHandler = function (schema, request) {
+  const { product } = JSON.parse(request.requestBody);
+  try {
+    this.db.products.insert(product);
+    return new Response(200, {}, { products: this.db.products });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};

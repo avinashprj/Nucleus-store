@@ -4,7 +4,7 @@ import { FiX } from 'react-icons/fi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsCart2, BsPerson } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
-import { pageLinks } from './navbar.data';
+import { admin, pageLinks } from './navbar.data';
 import { useCloseOnClickOutside } from '../../CustomHooks/CustomHooks';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { Cart } from '../Cart/Cart';
@@ -14,7 +14,7 @@ import { useWishlistContext } from '../../store/Context/WishlistContext';
 import { SearchBar } from '../SearchBar/SearchBar';
 
 export const Navbar = () => {
-  const { login, setUser, setLogin } = useAuthContext();
+  const { login, setUser, setLogin, user } = useAuthContext();
   const { cart, setCart, toggleCartModal, setToggleCartModal } =
     useCartContext();
   const [wishlist, setWishlist] = useWishlistContext();
@@ -57,6 +57,17 @@ export const Navbar = () => {
             </Link>
           </li>
         ))}
+        {user.id === admin._id && (
+          <li>
+            <Link
+              style={{ textTransform: 'capitalize' }}
+              to="upload"
+              className="link nav-link m-right-small"
+            >
+              Upload
+            </Link>
+          </li>
+        )}
       </ul>
       <div className="nav-right flex-al-center">
         {/* Note: Desktop search bar */}

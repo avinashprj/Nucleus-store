@@ -1,5 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { Response } from 'miragejs';
+import axios from 'axios';
 import { formatDate } from '../utils/authUtils';
 
 const sign = require('jwt-encode');
