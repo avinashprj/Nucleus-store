@@ -14,6 +14,8 @@ import { CartContextProvider } from './store/Context/CartContext';
 import { WishlistContextProvider } from './store/Context/WishlistContext';
 import { AuthContextProvider } from './store/Context/AuthContext';
 import { SearchContextProvider } from './store/Context/SearchContext';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
 // Call make Server
 makeServer();
 
@@ -55,3 +57,4 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+serviceWorkerRegistration.register();
