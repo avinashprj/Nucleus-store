@@ -42,7 +42,7 @@ export const Navbar = () => {
           <span />
         </button>
         <Link to="/" className="nav-logo">
-          Nucleus
+          Electric
         </Link>
       </div>
       <ul className="nav-links flex-al-center">

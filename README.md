@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Nucleus Store 👋</h1>
+<h1 align="center">Welcome to Electric Store 👋</h1>
 <p>
 </p>
 

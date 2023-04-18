@@ -6,7 +6,7 @@ import { footerData } from './footer.data';
 export const Footer = () => (
   <footer className="footer">
     <div className="footer-header flex-base flex-column">
-      <h2 className="m-bottom-small">Nucleus</h2>
+      <h2 className="m-bottom-small">Electric</h2>
       <div className="footer-socials">
         {socials.map((social) => (
           <span key={social.id}>

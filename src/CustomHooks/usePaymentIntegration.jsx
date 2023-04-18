@@ -54,7 +54,7 @@ function usePaymentIntegration() {
       key: process.env.REACT_APP_RZP_KEY,
       amount: cartTotalPrice(cart) * 100,
       currency: 'INR',
-      name: 'Nucleus Store',
+      name: 'Electric Store',
       description: 'Thank you for shopping with us',
       image: 'https://i.ibb.co/CzmZDzk/Screenshot-2022-06-16-at-7-50-34-PM.png',
       handler(response) {
